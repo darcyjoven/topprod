@@ -1199,6 +1199,8 @@ END FUNCTION
 #darcy:2025/01/13 add s---
 function aqci120_upd_aql()
    define l_qcd04 LIKe qcd_file.qcd04
+   define l_pmh09 like pmh_file.pmh09
+   define l_cnt   like type_file.num10
 
    select qcd04 into l_qcd04 from qcd_file where qcd04  <> 0 and rownum = 1
 
@@ -1206,6 +1208,12 @@ function aqci120_upd_aql()
       let l_qcd04 = 0.4
    else
       let l_qcd04 = 0.65
+   end if
+
+   if l_qcd04 = 0.4 then
+      let l_pmh09 = 'T'
+   else
+      let l_pmh09 = 'N'
    end if
 
    begin work
@@ -1217,6 +1225,15 @@ function aqci120_upd_aql()
       call cl_err("",sqlca.sqlcode,1)
       return
    end if
+
+   update pmh_file set pmh09 = l_pmh09, pmhdate = g_today
+
+   if sqlca.sqlcode then
+      rollback work
+      call cl_err("",sqlca.sqlcode,1)
+      return
+   end if
+   let l_cnt = sqlca.sqlerrd[3]
 
    if l_qcd04 == '0.4' then
       if not cl_confirm("cqc-009") then
@@ -1233,7 +1250,7 @@ function aqci120_upd_aql()
    end if
 
    commit work
-   MESSAGE "更新成功"
+   MESSAGE "更新成功,检验程度",l_pmh09 USING "<< >>","/",l_cnt USING "####&","笔"
 
    call aqci120_act_name()
 end function

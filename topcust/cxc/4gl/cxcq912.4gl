@@ -14,7 +14,7 @@
 #        and (bmb05 is null or bmb05 > trunc(sysdate))
 #   2) 工艺资料 ------ ecb_file(主件与自制辅料一起取) 关联 eca_file(工作站) / gem_file(部门)
 #        工站总人工工时汇总 ecb19s = SUM(ecb19) OVER (PARTITION BY gem01)
-#   3) 部门分项成本 --- ta_cck_file 只有主件(tc_cck01=年, ta_cck02=月, ta_cck03=主件料号)
+#   3) 部门分项成本 --- ta_cck_file 只有主件(ta_cck01=年, ta_cck02=月, ta_cck03=主件料号, ta_cck11=版本)
 #        主件与其自制辅料落在同一部门时,以主件的部门成本一起分摊
 #   4) 人工制费金额 --- (ta_cck06a + ta_cck07a + ta_cck08a) / ta_cck09 / ecb19s * ecb19
 #        分母为 0 或该部门无成本资料时,分摊栏位留 0(不报错)
@@ -288,7 +288,8 @@ FUNCTION cxcq912_b_fill()
                 "   FROM ta_cck_file ",
                 "  WHERE ta_cck01 = ",g_ver.yy,
                 "    AND ta_cck02 = ",g_ver.mm,
-                "    AND ta_cck03 = '",g_ver.item CLIPPED,"'"
+                "    AND ta_cck03 = '",g_ver.item CLIPPED,"'",
+                "    AND ta_cck11 = '",g_ver.ver CLIPPED,"'"
     PREPARE cxcq912_cck_p FROM l_sql
     DECLARE cxcq912_cck_c CURSOR FOR cxcq912_cck_p
     LET i = 1

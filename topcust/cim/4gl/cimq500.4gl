@@ -237,12 +237,11 @@ end function
 function cimq500_show()
     display g_tc_ila01,g_tc_ila02,g_only_today to dat,version,only_today
     call scimq500_b_fill()
-   
 end function
 
- 
+
 function cimq500_bp()
-         
+
     call cl_set_act_visible("accept,cancel", false)
     dialog ATTRIBUTES (UNBUFFERED)
         display array g_total to s_total.* attribute(count=g_rec_total)
@@ -291,7 +290,7 @@ function cimq500_bp()
         on action exporttoexcel
             let g_action_choice = 'exporttoexcel'
             exit dialog
-        
+
         on action next call cimq500_fetch("N")
         on action previous call cimq500_fetch("P")
         on action last call cimq500_fetch("L")

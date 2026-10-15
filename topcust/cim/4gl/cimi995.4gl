@@ -23,8 +23,11 @@ DEFER INTERRUPT
     IF (NOT cl_setup("CIM")) THEN
        EXIT PROGRAM
     END IF
+    call cut()
+    # call mailcimr500()
+    # call exp_cxmr023_1()
     --call testid()
-    call cimp500()
+    --call cimp500()
     --call testrecord()
     --call testdatetime()
     --call txml()
@@ -39,6 +42,38 @@ DEFER INTERRUPT
     --call remark()
     --call cbmr002()
 end main
+
+function cut()
+    define  l_var       varchar(100)
+    define  l_str       string
+
+    let l_var = 'this is a long world.'
+    let l_str = l_var
+
+    display l_var[1,4]
+    # display l_str[1,4]
+
+    select ima01 into l_var from ima_file where ima01 = l_var[1,5]
+
+    display l_str.subString(1,4)
+
+end function
+
+function mailcimr500()
+    call scimp500_mail('26/09/03','normal',"dong.xia@forewin-sz.com.cn","betty.lv@forewin-sz.com.cn;qingyun.sun@forewin-sz.com.cn")
+end function
+
+--
+function exp_cxmr023_1()
+    define l_str        string
+OPEN WINDOW cxmr023_w AT 1,1 WITH FORM "cxm/42f/cxmr023_1"
+    ATTRIBUTE (STYLE = g_win_style CLIPPED)
+
+CALL cl_ui_init()
+
+let l_str = cl_expexcel1("",null)
+close WINDOW cxmr023_w
+end function
 
 --
 function testid()

@@ -15,6 +15,7 @@ define g_cga02_t like cga_file.cga02
 define g_cga03_t like cga_file.cga03
 define g_cga04_t like cga_file.cga04
 define g_cga05_t like cga_file.cga05
+define g_cga06_t like cga_file.cga06 # darcy:2025/10/29 add
 define g_before_input_done like type_file.num5
 define g_forupd_sql string
 
@@ -91,6 +92,9 @@ function cgos001_menu()
 end function
 
 function cgos001_show()
+    define l_ch1,l_ch2     base.Channel
+    define l_fn,l_ex varchar(2000)
+    define l_cmd     string
 
     select * into g_cga.* from cga_file
     if sqlca.sqlcode or g_cga.cga01 is null then
@@ -103,7 +107,8 @@ function cgos001_show()
         let g_cga.cga02 = '/usr/bin/go'
         let g_cga.cga03 = '$CGO/code'
         let g_cga.cga04 = '$CGO/out'
-        let g_cga.cga05 = '$CGO/backup'
+        let g_cga.cga05 = '$CGO/42m'
+        let g_cga.cga06 = 'N' # darcy:2025/10/29 add
 
         insert into cga_file values (g_cga.*)
         if sqlca.sqlcode then
@@ -112,7 +117,36 @@ function cgos001_show()
         end if
     end if
 
+
     display by name g_cga.*
+    display "go软件的目录，可以是绝对路径，也可以是可以执行的命令" to go1
+    display "gcc编译器的目录，可以是绝对路径，也可以是可以执行的命令" to gcc1
+    display "cgo代码的根目录" to workpath1
+    display "编译后的文件存放目录" to outpath1
+    display "最终文件链接的目录，例如$CGO/42m等目录" to m421
+
+    # 查看系统版本
+
+    # goalng
+    let l_ch1 = base.Channel.create() 
+    -- go version go1.25.3 linux/amd64
+    let l_cmd = g_cga.cga01," version"
+    call l_ch1.openPipe(l_cmd,"r")
+    if l_ch1.read([l_fn]) then
+        display l_fn to go2
+    end if
+    call l_ch1.close()
+
+    #GCC
+    let l_ch2 = base.Channel.create()
+    let l_cmd = g_cga.cga02," -v 2>&1" 
+    -- call l_ch2.setDelimiter("\n")
+    call l_ch2.openPipe(l_cmd,"r")
+    while l_ch2.read([l_ex])
+        display l_ex
+    end while
+    display l_ex to gcc2
+
     call cl_show_fld_cont()
     
 end function
@@ -124,6 +158,7 @@ function cgos001_u()
     let g_cga03_t = g_cga.cga03
     let g_cga04_t = g_cga.cga04
     let g_cga05_t = g_cga.cga05
+    let g_cga06_t = g_cga.cga06 # darcy:2025/10/29 add
 
     let g_forupd_sql = "SELECT * FROM cga_file FOR UPDATE"
     let g_forupd_sql = cl_forupd_sql(g_forupd_sql)
@@ -202,6 +237,13 @@ function cgos001_i()
                     if cl_null(g_cga.cga05) then
                         let g_cga.cga05 = g_cga05_t
                     end if
+                # darcy:2025/10/29 add s---
+                when infield(cga06)
+                    call cl_server_file(g_cga.cga06) returning g_cga.cga06
+                    if cl_null(g_cga.cga06) then
+                        let g_cga.cga06 = g_cga06_t
+                    end if
+                # darcy:2025/10/29 add e---
             end case
             display by name g_cga.*
         on action controlg

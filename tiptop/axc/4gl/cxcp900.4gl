@@ -55,7 +55,7 @@ MAIN
 
    CALL cl_used(g_prog,g_time,1) RETURNING g_time           #程式進入時間
    INITIALIZE tm.* TO NULL
-   # TODO 没有这个表，无效SQL
+ 
    LET g_forupd_sql = "SELECT * FROM tc_ccp_file WHERE ta_ccc02 = ? AND ta_ccc03 = ? FOR UPDATE "      
    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)           #轉換不同資料庫語法
    DECLARE p900_cl CURSOR FROM g_forupd_sql                 # LOCK CURSOR
@@ -158,14 +158,12 @@ FUNCTION p900_curs()
     END IF
 END FUNCTION 
 
-# 入口函数
 FUNCTION p900_pro()
   DEFINE l_cnt       LIKE type_file.num10
   DEFINE l_flag              LIKE type_file.chr1
   
   IF cl_null(tm.yy) OR cl_null(tm.mm) THEN RETURN END IF
   
-  # TODO 无效SQL
   LET l_cnt = 0
   SELECT COUNT(*) INTO l_cnt FROM tc_ccp_file 
    WHERE ta_ccc02 = tm.yy AND ta_ccc03 = tm.mm
@@ -193,7 +191,6 @@ FUNCTION p900_pro()
      CALL cl_end2(2) RETURNING l_flag
   END IF 
 END FUNCTION
-
 #期别资料设置
 FUNCTION p900_pre()  
   DEFINE l_c   CHAR(1)
@@ -209,14 +206,12 @@ FUNCTION p900_pre()
         RETURNING l_c,b_date,e_date
 END FUNCTION
 
-# 删除已存在的成本资料
 FUNCTION p900_del()
 
   DELETE FROM ta_ccp_file WHERE ta_ccc02 = tm.yy AND ta_ccc03 = tm.mm
   
 END FUNCTION
 
-# 成本前置处理
 FUNCTION p900_p0()
   DEFINE l_cnt     LIKE type_file.num10
   
@@ -239,8 +234,7 @@ FUNCTION p900_p0()
 
 END FUNCTION
 
-#BOM处理
-FUNCTION p900_p0_1() 
+FUNCTION p900_p0_1() #BOM处理
 
   CALL p800_p_1()   #ex_bom_result
   CALL p800_p_2()   #ex_bom_CP;
@@ -248,7 +242,6 @@ FUNCTION p900_p0_1()
 
 END FUNCTION
 
-# BOM用量 写入 ex_bom_result
 FUNCTION p800_p_1()  #ex_bom_result
   DEFINE l_n    LIKE type_file.num10
   DEFINE i      LIKE type_file.num10
@@ -262,8 +255,7 @@ FUNCTION p800_p_1()  #ex_bom_result
   DELETE FROM ex_bom_result WHERE yy = tm.yy AND mm = tm.mm
   DELETE FROM ex_bom_2
   DELETE FROM ex_bom_3
-  # BUG 应该直接用 INSTR(BMA01,'.') = 0 判断是否是成品料号，因为模具也可能第七位是字母
-  #     且现在的成品第七位不仅是这些字母
+
   INSERT INTO ex_bom_result
   SELECT DISTINCT 0,BMA01,'00' bmb02,bma01,bma01,bma05 bmb04,'' bmb05,1 bmb06,1 bmb07,tm.yy,tm.mm
     FROM bma_file
@@ -271,13 +263,12 @@ FUNCTION p800_p_1()  #ex_bom_result
      AND bmaacti='Y' AND BMA10='2'
 
   INSERT INTO ex_bom_3
-  SELECT DISTINCT 0,BMA01,'00' bmb02,BMA01,BMA01,bma05 bmb04,'' bmb05,1 bmb06,1 bmb07 FROM bma_file
+  SELECT DISTINCT  0,BMA01,'00' bmb02,BMA01,BMA01,bma05 bmb04,'' bmb05,1 bmb06,1 bmb07 FROM bma_file
    WHERE substr(BMA01,7,1) IN('A','F','R','G') AND INSTR(BMA01,'-')=0
      AND bmaacti='Y' AND BMA10='2'
 
   FOR i = 1 TO 30
     DELETE FROM ex_bom_2
-    # BUG 存在错误，如果有重复元件，生效日期不同的时候，会导致只取日期比较靠前的一个
     LET g_sql = " INSERT INTO ex_bom_2 ",
                 " SELECT ",i,",cplh,xh,bmb01,bmb03,bmb04,bmb05,bmb06,ljyl FROM ",
                 "       (SELECT cplh,xh||bmb02 xh,bmb01,bmb03, ",
@@ -315,9 +306,7 @@ FUNCTION p800_p_1()  #ex_bom_result
  END FOR 
 END FUNCTION
 
-#ex_bom_CP
-# TODO 和ex_bom_result一样？
-FUNCTION p800_p_2()  
+FUNCTION p800_p_2()  #ex_bom_CP
   DEFINE l_n    LIKE type_file.num10
   DEFINE i      LIKE type_file.num10
 
@@ -456,14 +445,12 @@ FUNCTION p800_p_3()  #EX_BOM_GS
   END FOR 
 END FUNCTION
 
-#期库存处理
-FUNCTION p900_p0_2() 
+FUNCTION p900_p0_2() #期库存处理
 
    CALL p810_p_1()   #ex_imk   #先MRK掉
 
 END FUNCTION
 
-#期库存处理
 FUNCTION p810_p_1()  #ex_imk
   DEFINE l_n    LIKE type_file.num10
   DEFINE i      LIKE type_file.num10
@@ -483,7 +470,6 @@ FUNCTION p810_p_1()  #ex_imk
 
   LET l_date = TODAY + 1
   #A产品使用材料
-  # 非辅料的期末库存
   INSERT INTO ex_imk_file
   SELECT IMK01,IMK01,IMK01,IMK01,tm.yy,tm.mm,
          SUM(IMK09) imk09,0,0
@@ -492,15 +478,13 @@ FUNCTION p810_p_1()  #ex_imk
      AND IMK05=tm.yy AND IMK06=tm.mm AND INSTR(IMK01,'-')=0 AND IMK02 NOT IN (SELECT jce02 FROM jce_file) 
      AND imk09<>0
    GROUP BY IMK01
-  
-  # 非辅料的在制结存
+   
   INSERT INTO ex_imk_file
   SELECT cch04,cch04,cch04,cch04,tm.yy,tm.mm,sum(cch91) cch91,0,0 FROM cch_file,sfb_file
    WHERE cch02=tm.yy AND cch03=tm.mm AND sfb01=cch01
      AND ((sfb38 IS NULL AND l_date > e_date) OR (sfb38 IS NOT NULL AND sfb38 > e_date))
      AND INSTR(cch04,'-')=0  GROUP BY cch04
-  
-  # 辅料期末库存 和 辅料的在制结存
+     
   LET g_sql = 
   "INSERT INTO ex_imk_3 ",
   "SELECT imk01,' ',' ',' ',sum(IMK09) imk09 ", 
@@ -518,7 +502,6 @@ FUNCTION p810_p_1()  #ex_imk
   PREPARE p810_p1 FROM g_sql
   EXECUTE p810_p1
   
-  # 辅料的本月转出
   INSERT INTO ex_imk_4
   SELECT ccg01,ccg04,-ccg31,ccg02,ccg03 FROM ccg_file,sfb_file
    WHERE instr(ccg04,'-')>0 
@@ -1038,7 +1021,7 @@ FUNCTION p900_p_4()  #更新库存杂项入库、样品入库数量、金额；�
   EXECUTE p900_p1 
 
   #更新库存杂项出库数量  ta_ccc41
- UPDATE ta_ccp_file SET ta_ccc41=(SELECT SUM(tlf10*TLF907*tlf60)
+ UPDATE ta_ccp_file SET ta_ccc41=(SELECT SUM(tlf10*TLF907*tlf60) # darcy:2025/12/02 add tlf60 单位换算
   FROM tlf_file  WHERE tlf13 IN ('aimt301','aimt303','aimt311','aimt313') AND INSTR(tlf01,'-')=0
   AND to_char(tlf06,'yyyyMM')= TO_CHAR(to_date(tm.yy||tm.mm,'yyyyMM'),'yyyyMM')
   AND tlf902 NOT IN( SELECT jce02 FROM jce_file WHERE jceacti='Y')
@@ -1054,7 +1037,7 @@ END FUNCTION
 FUNCTION p900_p_5()  #更新WIP杂项入库数量、金额
 
 --更新WIP杂项入库数量  ta_ccc217
- UPDATE ta_ccp_file SET ta_ccc217=(SELECT SUM(tlf10*TLF907)
+ UPDATE ta_ccp_file SET ta_ccc217=(SELECT SUM(tlf10*TLF907*tlf60) # darcy:2025/12/02 add tlf60 单位换算
   FROM tlf_file  WHERE tlf13 IN('aimt312','aimt302') AND INSTR(tlf01,'-')=0
   AND to_char(tlf06,'yyyyMM')= TO_CHAR(to_date(tm.yy||tm.mm,'yyyyMM'),'yyyyMM')
   AND tlf902 NOT IN( SELECT jce02 FROM jce_file WHERE jceacti='Y')
@@ -1065,7 +1048,7 @@ FUNCTION p900_p_5()  #更新WIP杂项入库数量、金额
   AND tlf902 IN( SELECT tc_jcf02 FROM tc_jcf_file WHERE tc_jcfacti='Y'))
    AND ta_ccc02=tm.yy AND ta_ccc03=tm.mm 
 
- UPDATE ta_ccp_file SET ta_ccc217=ta_ccc217+(SELECT nvl(SUM(tlf10*TLF907*ljyl),0)
+ UPDATE ta_ccp_file SET ta_ccc217=ta_ccc217+(SELECT nvl(SUM(tlf10*TLF907*ljyl*tlf60),0) # darcy:2025/12/02 add tlf60 单位换算
   FROM tlf_file,ex_bom_cp  WHERE tlf01=cplh AND tlf13 IN('aimt312') AND INSTR(tlf01,'-')>0 AND INSTR(yjlh,'-')=0
     AND to_char(sxrq1,'yyyyMM')<=TO_CHAR(to_date(tm.yy||tm.mm,'yyyyMM'),'yyyyMM')
     AND ex_bom_cp.yy = tm.yy AND ex_bom_cp.mm = tm.mm
@@ -1083,7 +1066,7 @@ FUNCTION p900_p_5()  #更新WIP杂项入库数量、金额
    AND ta_ccc02=tm.yy AND ta_ccc03=tm.mm 
    
 --入到非WIP带‘-’料号需要转下阶
- UPDATE ta_ccp_file SET ta_ccc217=ta_ccc217+(SELECT nvl(SUM(tlf10*TLF907*ljyl),0)
+ UPDATE ta_ccp_file SET ta_ccc217=ta_ccc217+(SELECT nvl(SUM(tlf10*TLF907*ljyl*tlf60),0) # darcy:2025/12/02 add tlf60 单位换算
   FROM tlf_file,ex_bom_cp  WHERE tlf01=cplh AND tlf13 IN('aimt302') AND INSTR(tlf01,'-')>0 AND INSTR(yjlh,'-')=0
     AND to_char(sxrq1,'yyyyMM')<=TO_CHAR(to_date(tm.yy||tm.mm,'yyyyMM'),'yyyyMM')
     AND ex_bom_cp.yy = tm.yy AND ex_bom_cp.mm = tm.mm
@@ -1102,7 +1085,7 @@ FUNCTION p900_p_5()  #更新WIP杂项入库数量、金额
 
 --更新WIP杂项出库数量 ta_ccc81
  --正常出库
- UPDATE ta_ccp_file SET ta_ccc81=(SELECT NVL(SUM(tlf10*TLF907*tlf12),0)
+ UPDATE ta_ccp_file SET ta_ccc81=(SELECT NVL(SUM(tlf10*TLF907*tlf60),0) # darcy:2025/12/02 mod tlf12 -> tlf60
   FROM tlf_file  WHERE tlf13 IN ('aimt301','aimt303','aimt311','aimt313') AND INSTR(tlf01,'-')=0
   AND to_char(tlf06,'yyyyMM')= TO_CHAR(to_date(tm.yy||tm.mm,'yyyyMM'),'yyyyMM')
   AND tlf902 NOT IN( SELECT jce02 FROM jce_file WHERE jceacti='Y')
@@ -1115,7 +1098,7 @@ FUNCTION p900_p_5()  #更新WIP杂项入库数量、金额
 
 --带'-'的料号，要展尾阶 luoyb
   --领用带‘-’料号需要转下阶
- UPDATE ta_ccp_file SET ta_ccc81=ta_ccc81+(SELECT NVL(SUM(tlf10*TLF907*tlf12*ljyl),0)
+ UPDATE ta_ccp_file SET ta_ccc81=ta_ccc81+(SELECT NVL(SUM(tlf10*TLF907*tlf60*ljyl),0) # darcy:2025/12/02 mod tlf12 -> tlf60
   FROM tlf_file,ex_bom_cp WHERE tlf01=cplh AND tlf13 IN ('aimt301','aimt303','aimt311','aimt313') AND INSTR(tlf01,'-')>0 AND INSTR(yjlh,'-')=0
     AND to_char(sxrq1,'yyyyMM')<=TO_CHAR(to_date(tm.yy||tm.mm,'yyyyMM'),'yyyyMM')
     AND ex_bom_cp.yy = tm.yy AND ex_bom_cp.mm = tm.mm
@@ -1133,7 +1116,7 @@ FUNCTION p900_p_5()  #更新WIP杂项入库数量、金额
    AND ta_ccc02=tm.yy AND ta_ccc03=tm.mm 
 
  --从非WIP领用带‘-’料号需要转下阶
- UPDATE ta_ccp_file SET ta_ccc81=ta_ccc81+(SELECT NVL(SUM(tlf10*TLF907*tlf12*ljyl),0)
+ UPDATE ta_ccp_file SET ta_ccc81=ta_ccc81+(SELECT NVL(SUM(tlf10*TLF907*tlf60*ljyl),0) # darcy:2025/12/02 mod tlf12 -> tlf60
   FROM tlf_file,ex_bom_cp  WHERE tlf01=cplh AND tlf13 IN ('aimt301','aimt303','aimt311','aimt313') AND INSTR(tlf01,'-')>0 AND INSTR(yjlh,'-')=0
     AND to_char(sxrq1,'yyyyMM')<=TO_CHAR(to_date(tm.yy||tm.mm,'yyyyMM'),'yyyyMM')
     AND ex_bom_cp.yy = tm.yy AND ex_bom_cp.mm = tm.mm

@@ -1091,7 +1091,7 @@ FUNCTION t720_i(p_cmd)
              #-MOD-AB0230-end-
               SELECT nno02,nno06 INTO g_nng.nng04,g_nng.nng18  #No.TQC-790077
                 FROM nno_file
-               WHERE nno01=g_nng.nng52
+               WHERE nno01=g_nng.nng52q
                  AND nnoacti = 'Y'   #MOD-840248
               IF SQLCA.sqlcode THEN
                  CALL cl_err3("sel","nno_file",g_nng.nng52,"","aap-091","","",1)  #No.FUN-660148

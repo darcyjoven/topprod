@@ -216,7 +216,7 @@ TYPE t_ta_cck          RECORD                                    #记录集
       ta_cck08a_40        like type_file.num20_6
        #darcy:2023/05/22 add e---
                          END RECORD
-                         
+
 DEFINE g_ta_cck            DYNAMIC ARRAY OF t_ta_cck               #单身全局
 DEFINE tm                  RECORD
        wc                  STRING,
@@ -237,8 +237,8 @@ DEFINE g_jump              LIKE type_file.num10                       #跳转Fet
 DEFINE g_no_ask            LIKE type_file.num10                       #是否开启指定笔視窗
 DEFINE g_msg               LIKE type_file.chr1000                     #错误信息
 DEFINE g_statebar          STRING                                     #笔数变量
-DEFINE g_argv1	           LIKE type_file.num5          
-DEFINE g_ta_cck_attr DYNAMIC ARRAY OF RECORD    #NO.160328 add 
+DEFINE g_argv1	           LIKE type_file.num5
+DEFINE g_ta_cck_attr DYNAMIC ARRAY OF RECORD    #NO.160328 add
        ta_cck03          STRING,
        ima02             STRING,
        ima021            STRING,
@@ -445,7 +445,7 @@ DEFINE g_ta_cck_attr DYNAMIC ARRAY OF RECORD    #NO.160328 add
         ta_cck06a_40        string,
         ta_cck07a_40        string,
         ta_cck08a_40        string
-        
+
         #darcy:2023/05/22 add e---
                          END RECORD
 
@@ -520,9 +520,9 @@ DEFINE p_row,p_col         LIKE type_file.num5
     CALL cl_set_comp_visible("ta_cck10_39,ta_cck05_39,ta_cck06a_39,ta_cck07a_39,ta_cck08a_39",FALSE)
     CALL cl_set_comp_visible("ta_cck10_40,ta_cck05_40,ta_cck06a_40,ta_cck07a_40,ta_cck08a_40",FALSE)
     #darcy:2023/05/22 add e---
-       
+
        SELECT * INTO g_ccz.* FROM ccz_file WHERE ccz00 = '0'
-       
+
        LET g_action_choice = ""                                       #初始化Action执行标示
        CALL q900_menu()                                               #进入菜单
 
@@ -568,16 +568,16 @@ DEFINE l_cmd               STRING
 END FUNCTION
 
 FUNCTION q900_cs()
-DEFINE  lc_qbe_sn       LIKE gbm_file.gbm01 
+DEFINE  lc_qbe_sn       LIKE gbm_file.gbm01
 
        CLEAR FORM
-       CALL g_ta_cck.clear()                                             #数组变量清空 
+       CALL g_ta_cck.clear()                                             #数组变量清空
        INITIALIZE tm.* TO NULL
        DIALOG ATTRIBUTES(UNBUFFERED)
-           
+
            INPUT BY NAME tm.yy,tm.mm
 
-               BEFORE INPUT 
+               BEFORE INPUT
                   LET tm.yy = g_ccz.ccz01
                   LET tm.mm = g_ccz.ccz02
                   DISPLAY BY NAME tm.yy,tm.mm
@@ -586,7 +586,7 @@ DEFINE  lc_qbe_sn       LIKE gbm_file.gbm01
                  IF NOT cl_null(tm.yy) THEN
 
                  END IF
-                 
+
               AFTER FIELD mm
                  IF NOT cl_null(tm.mm) THEN
                     SELECT azm02 INTO g_azm.azm02 FROM azm_file
@@ -606,8 +606,8 @@ DEFINE  lc_qbe_sn       LIKE gbm_file.gbm01
                  IF cl_null(tm.mm) THEN
                     NEXT FIELD mm
                  END IF
-         
-           END INPUT 
+
+           END INPUT
 
            CONSTRUCT tm.wc ON ta_cck03,ta_cck11
                 FROM
@@ -626,7 +626,7 @@ DEFINE  lc_qbe_sn       LIKE gbm_file.gbm01
                         DISPLAY g_qryparam.multiret TO ta_cck03
                         NEXT FIELD ta_cck03
                 END CASE
-        
+
              ON IDLE g_idle_seconds
                 CALL cl_on_idle()
                 CONTINUE DIALOG
@@ -658,7 +658,7 @@ DEFINE  lc_qbe_sn       LIKE gbm_file.gbm01
                 LET INT_FLAG = TRUE
                 EXIT DIALOG
             END DIALOG
-            
+
            IF INT_FLAG THEN
                LET INT_FLAG = 0
                RETURN
@@ -807,10 +807,10 @@ FUNCTION q900_b_fill()
     CALL cl_set_comp_visible("ta_cck10_39,ta_cck05_39,ta_cck06a_39,ta_cck07a_39,ta_cck08a_39",FALSE)
     CALL cl_set_comp_visible("ta_cck10_40,ta_cck05_40,ta_cck06a_40,ta_cck07a_40,ta_cck08a_40",FALSE)
     #darcy:2023/05/22 add e---
-  
+
   LET l_cnt = 1
   LET l_sql = " SELECT ta_cck03,ima02,ima021,ta_cck11,ta_cck09 "
-  
+
   DECLARE q900_c CURSOR FOR
    SELECT UNIQUE ta_cck04 FROM ta_cck_file
     WHERE ta_cck01 = tm.yy
@@ -827,25 +827,25 @@ FUNCTION q900_b_fill()
 
     LET l_gem02 = NULL
     SELECT gem02 INTO l_gem02 FROM gem_file WHERE gem01 = l_ta_cck04
-    IF cl_null(l_gem02) THEN LET l_gem02 = l_ta_cck04 END IF 
+    IF cl_null(l_gem02) THEN LET l_gem02 = l_ta_cck04 END IF
     LET l_a1 = l_gem02 CLIPPED,"-","单位工时"
     LET l_a2 = l_gem02 CLIPPED,"-","总工时"
     LET l_a3 = l_gem02 CLIPPED,"-","人工"
     LET l_a4 = l_gem02 CLIPPED,"-","制费"
     LET l_a5 = l_gem02 CLIPPED,"-","其它"
-    IF l_cnt < 10 THEN 
+    IF l_cnt < 10 THEN
        LET l_b1 = "ta_cck10_",l_cnt USING '#'
        LET l_b2 = "ta_cck05_",l_cnt USING '#'
        LET l_b3 = "ta_cck06a_",l_cnt USING '#'
        LET l_b4 = "ta_cck07a_",l_cnt USING '#'
        LET l_b5 = "ta_cck08a_",l_cnt USING '#'
-    ELSE 
+    ELSE
        LET l_b1 = "ta_cck10_",l_cnt USING '##'
        LET l_b2 = "ta_cck05_",l_cnt USING '##'
        LET l_b3 = "ta_cck06a_",l_cnt USING '##'
        LET l_b4 = "ta_cck07a_",l_cnt USING '##'
        LET l_b5 = "ta_cck08a_",l_cnt USING '##'
-    END IF 
+    END IF
     LET l_str = l_b1 CLIPPED,",",
                 l_b2 CLIPPED,",",
                 l_b3 CLIPPED,",",
@@ -866,7 +866,7 @@ FUNCTION q900_b_fill()
   FOR l_cnt2 = 1 TO l_cnt1
     LET l_sql = l_sql CLIPPED," ,0,0,0,0,0 "
   END FOR
-  
+
   LET l_sql = l_sql CLIPPED," FROM ta_cck_file,ima_file ",
                             "WHERE ta_cck03=ima01 AND ta_cck01 = ",tm.yy," AND ta_cck02 = ",tm.mm,
                             "  AND ",tm.wc,
@@ -898,7 +898,7 @@ FUNCTION q900_b_fill()
     CALL cl_set_comp_att_text("ta_cck08a_40",l_a5)
     CALL cl_set_comp_visible("ta_cck10_40,ta_cck05_40,ta_cck06a_40,ta_cck07a_40,ta_cck08a_40",TRUE)
     #darcy:2023/05/22 mod e---
-  
+
   PREPARE q900_p FROM l_sql
   DECLARE q900_c1 CURSOR FOR q900_p
   FOREACH q900_c1 INTO g_ta_cck[g_cnt].*
@@ -909,27 +909,27 @@ FUNCTION q900_b_fill()
 
 #合计
     #darcy:2023/05/22 mod 30->40 s---
-    LET g_ta_cck[g_cnt].ta_cck10_40 = g_ta_cck[g_cnt].ta_cck10_1 + g_ta_cck[g_cnt].ta_cck10_2 + g_ta_cck[g_cnt].ta_cck10_3 + g_ta_cck[g_cnt].ta_cck10_4 + g_ta_cck[g_cnt].ta_cck10_5 + g_ta_cck[g_cnt].ta_cck10_6 + g_ta_cck[g_cnt].ta_cck10_7 + g_ta_cck[g_cnt].ta_cck10_8 + g_ta_cck[g_cnt].ta_cck10_9 + g_ta_cck[g_cnt].ta_cck10_10 + 
-                                      g_ta_cck[g_cnt].ta_cck10_11 + g_ta_cck[g_cnt].ta_cck10_12 + g_ta_cck[g_cnt].ta_cck10_13 + g_ta_cck[g_cnt].ta_cck10_14 + g_ta_cck[g_cnt].ta_cck10_15 + g_ta_cck[g_cnt].ta_cck10_16 + g_ta_cck[g_cnt].ta_cck10_17 + g_ta_cck[g_cnt].ta_cck10_18 + g_ta_cck[g_cnt].ta_cck10_19 + g_ta_cck[g_cnt].ta_cck10_20 + 
-                                      g_ta_cck[g_cnt].ta_cck10_21 + g_ta_cck[g_cnt].ta_cck10_22 + g_ta_cck[g_cnt].ta_cck10_23 + g_ta_cck[g_cnt].ta_cck10_24 + g_ta_cck[g_cnt].ta_cck10_25 + g_ta_cck[g_cnt].ta_cck10_26 + g_ta_cck[g_cnt].ta_cck10_27 + g_ta_cck[g_cnt].ta_cck10_28 + g_ta_cck[g_cnt].ta_cck10_29 
+    LET g_ta_cck[g_cnt].ta_cck10_40 = g_ta_cck[g_cnt].ta_cck10_1 + g_ta_cck[g_cnt].ta_cck10_2 + g_ta_cck[g_cnt].ta_cck10_3 + g_ta_cck[g_cnt].ta_cck10_4 + g_ta_cck[g_cnt].ta_cck10_5 + g_ta_cck[g_cnt].ta_cck10_6 + g_ta_cck[g_cnt].ta_cck10_7 + g_ta_cck[g_cnt].ta_cck10_8 + g_ta_cck[g_cnt].ta_cck10_9 + g_ta_cck[g_cnt].ta_cck10_10 +
+                                      g_ta_cck[g_cnt].ta_cck10_11 + g_ta_cck[g_cnt].ta_cck10_12 + g_ta_cck[g_cnt].ta_cck10_13 + g_ta_cck[g_cnt].ta_cck10_14 + g_ta_cck[g_cnt].ta_cck10_15 + g_ta_cck[g_cnt].ta_cck10_16 + g_ta_cck[g_cnt].ta_cck10_17 + g_ta_cck[g_cnt].ta_cck10_18 + g_ta_cck[g_cnt].ta_cck10_19 + g_ta_cck[g_cnt].ta_cck10_20 +
+                                      g_ta_cck[g_cnt].ta_cck10_21 + g_ta_cck[g_cnt].ta_cck10_22 + g_ta_cck[g_cnt].ta_cck10_23 + g_ta_cck[g_cnt].ta_cck10_24 + g_ta_cck[g_cnt].ta_cck10_25 + g_ta_cck[g_cnt].ta_cck10_26 + g_ta_cck[g_cnt].ta_cck10_27 + g_ta_cck[g_cnt].ta_cck10_28 + g_ta_cck[g_cnt].ta_cck10_29
                                       + g_ta_cck[g_cnt].ta_cck10_30 + g_ta_cck[g_cnt].ta_cck10_31 + g_ta_cck[g_cnt].ta_cck10_32 + g_ta_cck[g_cnt].ta_cck10_33 + g_ta_cck[g_cnt].ta_cck10_34 + g_ta_cck[g_cnt].ta_cck10_35 + g_ta_cck[g_cnt].ta_cck10_36 + g_ta_cck[g_cnt].ta_cck10_37 + g_ta_cck[g_cnt].ta_cck10_38 + g_ta_cck[g_cnt].ta_cck10_39  #darcy:2024/02/18 add
-    LET g_ta_cck[g_cnt].ta_cck05_40 = g_ta_cck[g_cnt].ta_cck05_1 + g_ta_cck[g_cnt].ta_cck05_2 + g_ta_cck[g_cnt].ta_cck05_3 + g_ta_cck[g_cnt].ta_cck05_4 + g_ta_cck[g_cnt].ta_cck05_5 + g_ta_cck[g_cnt].ta_cck05_6 + g_ta_cck[g_cnt].ta_cck05_7 + g_ta_cck[g_cnt].ta_cck05_8 + g_ta_cck[g_cnt].ta_cck05_9 + g_ta_cck[g_cnt].ta_cck05_10 + 
-                                      g_ta_cck[g_cnt].ta_cck05_11 + g_ta_cck[g_cnt].ta_cck05_12 + g_ta_cck[g_cnt].ta_cck05_13 + g_ta_cck[g_cnt].ta_cck05_14 + g_ta_cck[g_cnt].ta_cck05_15 + g_ta_cck[g_cnt].ta_cck05_16 + g_ta_cck[g_cnt].ta_cck05_17 + g_ta_cck[g_cnt].ta_cck05_18 + g_ta_cck[g_cnt].ta_cck05_19 + g_ta_cck[g_cnt].ta_cck05_20 + 
+    LET g_ta_cck[g_cnt].ta_cck05_40 = g_ta_cck[g_cnt].ta_cck05_1 + g_ta_cck[g_cnt].ta_cck05_2 + g_ta_cck[g_cnt].ta_cck05_3 + g_ta_cck[g_cnt].ta_cck05_4 + g_ta_cck[g_cnt].ta_cck05_5 + g_ta_cck[g_cnt].ta_cck05_6 + g_ta_cck[g_cnt].ta_cck05_7 + g_ta_cck[g_cnt].ta_cck05_8 + g_ta_cck[g_cnt].ta_cck05_9 + g_ta_cck[g_cnt].ta_cck05_10 +
+                                      g_ta_cck[g_cnt].ta_cck05_11 + g_ta_cck[g_cnt].ta_cck05_12 + g_ta_cck[g_cnt].ta_cck05_13 + g_ta_cck[g_cnt].ta_cck05_14 + g_ta_cck[g_cnt].ta_cck05_15 + g_ta_cck[g_cnt].ta_cck05_16 + g_ta_cck[g_cnt].ta_cck05_17 + g_ta_cck[g_cnt].ta_cck05_18 + g_ta_cck[g_cnt].ta_cck05_19 + g_ta_cck[g_cnt].ta_cck05_20 +
                                       g_ta_cck[g_cnt].ta_cck05_21 + g_ta_cck[g_cnt].ta_cck05_22 + g_ta_cck[g_cnt].ta_cck05_23 + g_ta_cck[g_cnt].ta_cck05_24 + g_ta_cck[g_cnt].ta_cck05_25 + g_ta_cck[g_cnt].ta_cck05_26 + g_ta_cck[g_cnt].ta_cck05_27 + g_ta_cck[g_cnt].ta_cck05_28 + g_ta_cck[g_cnt].ta_cck05_29
                                       + g_ta_cck[g_cnt].ta_cck05_30 + g_ta_cck[g_cnt].ta_cck05_31 + g_ta_cck[g_cnt].ta_cck05_32 + g_ta_cck[g_cnt].ta_cck05_33 + g_ta_cck[g_cnt].ta_cck05_34 + g_ta_cck[g_cnt].ta_cck05_35 + g_ta_cck[g_cnt].ta_cck05_36 + g_ta_cck[g_cnt].ta_cck05_37 + g_ta_cck[g_cnt].ta_cck05_38 + g_ta_cck[g_cnt].ta_cck05_39  #darcy:2024/02/18 add
-    LET g_ta_cck[g_cnt].ta_cck06a_40 = g_ta_cck[g_cnt].ta_cck06a_1 + g_ta_cck[g_cnt].ta_cck06a_2 + g_ta_cck[g_cnt].ta_cck06a_3 + g_ta_cck[g_cnt].ta_cck06a_4 + g_ta_cck[g_cnt].ta_cck06a_5 + g_ta_cck[g_cnt].ta_cck06a_6 + g_ta_cck[g_cnt].ta_cck06a_7 + g_ta_cck[g_cnt].ta_cck06a_8 + g_ta_cck[g_cnt].ta_cck06a_9 + g_ta_cck[g_cnt].ta_cck06a_10 + 
-                                      g_ta_cck[g_cnt].ta_cck06a_11 + g_ta_cck[g_cnt].ta_cck06a_12 + g_ta_cck[g_cnt].ta_cck06a_13 + g_ta_cck[g_cnt].ta_cck06a_14 + g_ta_cck[g_cnt].ta_cck06a_15 + g_ta_cck[g_cnt].ta_cck06a_16 + g_ta_cck[g_cnt].ta_cck06a_17 + g_ta_cck[g_cnt].ta_cck06a_18 + g_ta_cck[g_cnt].ta_cck06a_19 + g_ta_cck[g_cnt].ta_cck06a_20 + 
+    LET g_ta_cck[g_cnt].ta_cck06a_40 = g_ta_cck[g_cnt].ta_cck06a_1 + g_ta_cck[g_cnt].ta_cck06a_2 + g_ta_cck[g_cnt].ta_cck06a_3 + g_ta_cck[g_cnt].ta_cck06a_4 + g_ta_cck[g_cnt].ta_cck06a_5 + g_ta_cck[g_cnt].ta_cck06a_6 + g_ta_cck[g_cnt].ta_cck06a_7 + g_ta_cck[g_cnt].ta_cck06a_8 + g_ta_cck[g_cnt].ta_cck06a_9 + g_ta_cck[g_cnt].ta_cck06a_10 +
+                                      g_ta_cck[g_cnt].ta_cck06a_11 + g_ta_cck[g_cnt].ta_cck06a_12 + g_ta_cck[g_cnt].ta_cck06a_13 + g_ta_cck[g_cnt].ta_cck06a_14 + g_ta_cck[g_cnt].ta_cck06a_15 + g_ta_cck[g_cnt].ta_cck06a_16 + g_ta_cck[g_cnt].ta_cck06a_17 + g_ta_cck[g_cnt].ta_cck06a_18 + g_ta_cck[g_cnt].ta_cck06a_19 + g_ta_cck[g_cnt].ta_cck06a_20 +
                                       g_ta_cck[g_cnt].ta_cck06a_21 + g_ta_cck[g_cnt].ta_cck06a_22 + g_ta_cck[g_cnt].ta_cck06a_23 + g_ta_cck[g_cnt].ta_cck06a_24 + g_ta_cck[g_cnt].ta_cck06a_25 + g_ta_cck[g_cnt].ta_cck06a_26 + g_ta_cck[g_cnt].ta_cck06a_27 + g_ta_cck[g_cnt].ta_cck06a_28 + g_ta_cck[g_cnt].ta_cck06a_29
                                       + g_ta_cck[g_cnt].ta_cck06a_30 + g_ta_cck[g_cnt].ta_cck06a_31 + g_ta_cck[g_cnt].ta_cck06a_32 + g_ta_cck[g_cnt].ta_cck06a_33 + g_ta_cck[g_cnt].ta_cck06a_34 + g_ta_cck[g_cnt].ta_cck06a_35 + g_ta_cck[g_cnt].ta_cck06a_36 + g_ta_cck[g_cnt].ta_cck06a_37 + g_ta_cck[g_cnt].ta_cck06a_38 + g_ta_cck[g_cnt].ta_cck06a_39  #darcy:2024/02/18 add
-    LET g_ta_cck[g_cnt].ta_cck07a_40 = g_ta_cck[g_cnt].ta_cck07a_1 + g_ta_cck[g_cnt].ta_cck07a_2 + g_ta_cck[g_cnt].ta_cck07a_3 + g_ta_cck[g_cnt].ta_cck07a_4 + g_ta_cck[g_cnt].ta_cck07a_5 + g_ta_cck[g_cnt].ta_cck07a_6 + g_ta_cck[g_cnt].ta_cck07a_7 + g_ta_cck[g_cnt].ta_cck07a_8 + g_ta_cck[g_cnt].ta_cck07a_9 + g_ta_cck[g_cnt].ta_cck07a_10 + 
-                                      g_ta_cck[g_cnt].ta_cck07a_11 + g_ta_cck[g_cnt].ta_cck07a_12 + g_ta_cck[g_cnt].ta_cck07a_13 + g_ta_cck[g_cnt].ta_cck07a_14 + g_ta_cck[g_cnt].ta_cck07a_15 + g_ta_cck[g_cnt].ta_cck07a_16 + g_ta_cck[g_cnt].ta_cck07a_17 + g_ta_cck[g_cnt].ta_cck07a_18 + g_ta_cck[g_cnt].ta_cck07a_19 + g_ta_cck[g_cnt].ta_cck07a_20 + 
-                                      g_ta_cck[g_cnt].ta_cck07a_21 + g_ta_cck[g_cnt].ta_cck07a_22 + g_ta_cck[g_cnt].ta_cck07a_23 + g_ta_cck[g_cnt].ta_cck07a_24 + g_ta_cck[g_cnt].ta_cck07a_25 + g_ta_cck[g_cnt].ta_cck07a_26 + g_ta_cck[g_cnt].ta_cck07a_27 + g_ta_cck[g_cnt].ta_cck07a_28 + g_ta_cck[g_cnt].ta_cck07a_29 
+    LET g_ta_cck[g_cnt].ta_cck07a_40 = g_ta_cck[g_cnt].ta_cck07a_1 + g_ta_cck[g_cnt].ta_cck07a_2 + g_ta_cck[g_cnt].ta_cck07a_3 + g_ta_cck[g_cnt].ta_cck07a_4 + g_ta_cck[g_cnt].ta_cck07a_5 + g_ta_cck[g_cnt].ta_cck07a_6 + g_ta_cck[g_cnt].ta_cck07a_7 + g_ta_cck[g_cnt].ta_cck07a_8 + g_ta_cck[g_cnt].ta_cck07a_9 + g_ta_cck[g_cnt].ta_cck07a_10 +
+                                      g_ta_cck[g_cnt].ta_cck07a_11 + g_ta_cck[g_cnt].ta_cck07a_12 + g_ta_cck[g_cnt].ta_cck07a_13 + g_ta_cck[g_cnt].ta_cck07a_14 + g_ta_cck[g_cnt].ta_cck07a_15 + g_ta_cck[g_cnt].ta_cck07a_16 + g_ta_cck[g_cnt].ta_cck07a_17 + g_ta_cck[g_cnt].ta_cck07a_18 + g_ta_cck[g_cnt].ta_cck07a_19 + g_ta_cck[g_cnt].ta_cck07a_20 +
+                                      g_ta_cck[g_cnt].ta_cck07a_21 + g_ta_cck[g_cnt].ta_cck07a_22 + g_ta_cck[g_cnt].ta_cck07a_23 + g_ta_cck[g_cnt].ta_cck07a_24 + g_ta_cck[g_cnt].ta_cck07a_25 + g_ta_cck[g_cnt].ta_cck07a_26 + g_ta_cck[g_cnt].ta_cck07a_27 + g_ta_cck[g_cnt].ta_cck07a_28 + g_ta_cck[g_cnt].ta_cck07a_29
                                       + g_ta_cck[g_cnt].ta_cck07a_30 + g_ta_cck[g_cnt].ta_cck07a_31 + g_ta_cck[g_cnt].ta_cck07a_32 + g_ta_cck[g_cnt].ta_cck07a_33 + g_ta_cck[g_cnt].ta_cck07a_34 + g_ta_cck[g_cnt].ta_cck07a_35 + g_ta_cck[g_cnt].ta_cck07a_36 + g_ta_cck[g_cnt].ta_cck07a_37 + g_ta_cck[g_cnt].ta_cck07a_38 + g_ta_cck[g_cnt].ta_cck07a_39  #darcy:2024/02/18 add
-    LET g_ta_cck[g_cnt].ta_cck08a_40 = g_ta_cck[g_cnt].ta_cck08a_1 + g_ta_cck[g_cnt].ta_cck08a_2 + g_ta_cck[g_cnt].ta_cck08a_3 + g_ta_cck[g_cnt].ta_cck08a_4 + g_ta_cck[g_cnt].ta_cck08a_5 + g_ta_cck[g_cnt].ta_cck08a_6 + g_ta_cck[g_cnt].ta_cck08a_7 + g_ta_cck[g_cnt].ta_cck08a_8 + g_ta_cck[g_cnt].ta_cck08a_9 + g_ta_cck[g_cnt].ta_cck08a_10 + 
-                                      g_ta_cck[g_cnt].ta_cck08a_11 + g_ta_cck[g_cnt].ta_cck08a_12 + g_ta_cck[g_cnt].ta_cck08a_13 + g_ta_cck[g_cnt].ta_cck08a_14 + g_ta_cck[g_cnt].ta_cck08a_15 + g_ta_cck[g_cnt].ta_cck08a_16 + g_ta_cck[g_cnt].ta_cck08a_17 + g_ta_cck[g_cnt].ta_cck08a_18 + g_ta_cck[g_cnt].ta_cck08a_19 + g_ta_cck[g_cnt].ta_cck08a_20 + 
+    LET g_ta_cck[g_cnt].ta_cck08a_40 = g_ta_cck[g_cnt].ta_cck08a_1 + g_ta_cck[g_cnt].ta_cck08a_2 + g_ta_cck[g_cnt].ta_cck08a_3 + g_ta_cck[g_cnt].ta_cck08a_4 + g_ta_cck[g_cnt].ta_cck08a_5 + g_ta_cck[g_cnt].ta_cck08a_6 + g_ta_cck[g_cnt].ta_cck08a_7 + g_ta_cck[g_cnt].ta_cck08a_8 + g_ta_cck[g_cnt].ta_cck08a_9 + g_ta_cck[g_cnt].ta_cck08a_10 +
+                                      g_ta_cck[g_cnt].ta_cck08a_11 + g_ta_cck[g_cnt].ta_cck08a_12 + g_ta_cck[g_cnt].ta_cck08a_13 + g_ta_cck[g_cnt].ta_cck08a_14 + g_ta_cck[g_cnt].ta_cck08a_15 + g_ta_cck[g_cnt].ta_cck08a_16 + g_ta_cck[g_cnt].ta_cck08a_17 + g_ta_cck[g_cnt].ta_cck08a_18 + g_ta_cck[g_cnt].ta_cck08a_19 + g_ta_cck[g_cnt].ta_cck08a_20 +
                                       g_ta_cck[g_cnt].ta_cck08a_21 + g_ta_cck[g_cnt].ta_cck08a_22 + g_ta_cck[g_cnt].ta_cck08a_23 + g_ta_cck[g_cnt].ta_cck08a_24 + g_ta_cck[g_cnt].ta_cck08a_25 + g_ta_cck[g_cnt].ta_cck08a_26 + g_ta_cck[g_cnt].ta_cck08a_27 + g_ta_cck[g_cnt].ta_cck08a_28 + g_ta_cck[g_cnt].ta_cck08a_29
                                       + g_ta_cck[g_cnt].ta_cck08a_30 + g_ta_cck[g_cnt].ta_cck08a_31 + g_ta_cck[g_cnt].ta_cck08a_32 + g_ta_cck[g_cnt].ta_cck08a_33 + g_ta_cck[g_cnt].ta_cck08a_34 + g_ta_cck[g_cnt].ta_cck08a_35 + g_ta_cck[g_cnt].ta_cck08a_36 + g_ta_cck[g_cnt].ta_cck08a_37 + g_ta_cck[g_cnt].ta_cck08a_38 + g_ta_cck[g_cnt].ta_cck08a_39  #darcy:2024/02/18 add
-                                      
+
     #darcy:2023/05/22 mod 30->50 e---
     LET g_cnt = g_cnt + 1
   END FOREACH
@@ -937,4 +937,3 @@ FUNCTION q900_b_fill()
   LET g_rec_b = g_cnt - 1
   DISPLAY g_rec_b TO FORMONLY.cnt
 END FUNCTION
-

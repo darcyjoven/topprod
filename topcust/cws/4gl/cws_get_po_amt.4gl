@@ -115,6 +115,7 @@ function cws_get_po_amt_do(l_param)
     let l_cnt = 0
     select count(*) into l_cnt from pmm_file,pmn_file where pmm01 = pmn01
       and pmm18 ='Y' and pmn24 = l_param.erp_pr and pmn04 = l_param.item
+      and pmn53 > 0 # darcy:2026/09/09 add 入库后才计算
 
     if l_cnt == 0 then
         return "还未转采购单，无法查询金额","",0,0,0,''

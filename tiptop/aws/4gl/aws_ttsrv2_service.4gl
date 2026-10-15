@@ -897,7 +897,7 @@ DEFINE l_op        com.WebOperation
       when 'cws_getpoamt' let  l_op =com.WebOperation.CreateDOCStyle("cws_getpoamt", p_op_name, g_request, g_response)# darcy 查询采购金额 add
       when 'cws_UpdateUser' let  l_op =com.WebOperation.CreateDOCStyle("cws_UpdateUser", p_op_name, g_request, g_response)# darcy 查询采购金额 add
       when 'cws_CreateSalePrice' let  l_op =com.WebOperation.CreateDOCStyle("cws_CreateSalePrice", p_op_name, g_request, g_response)# darcy 查询采购金额 add
-
+      when "cws_ModifyPOMJ" let l_op =com.WebOperation.CreateDOCStyle("cws_ModifyPOMJ", p_op_name, g_request, g_response) # darcy 模具请购单异动
        END CASE
 
     RETURN l_op
@@ -3132,6 +3132,13 @@ function cws_CreatePOMJ()
    call cws_create_pomj()
 end function
 #darcy:2024/05/29 add e---
+
+# darcy:2026/10/08 add s---
+function cws_ModifyPOMJ()
+   let g_service = "cws_ModifyPOMJ"
+   call cws_modify_pomj()
+end function
+# darcy:2026/10/08 add e---
 
 
 #darcy:2024/06/24 add s---

@@ -1084,7 +1084,7 @@ FUNCTION p900_p_4()  #更新库存杂项入库、样品入库数量、金额；�
   EXECUTE p900_p1 
 
   #更新库存杂项出库数量  ta_ccc41
- UPDATE ta_ccp_file SET ta_ccc41=(SELECT SUM(tlf10*TLF907)
+ UPDATE ta_ccp_file SET ta_ccc41=(SELECT SUM(tlf10*TLF907*tlf60) # darcy:2025/12/02 add tlf60 单位换算
   FROM tlf_file  WHERE tlf13 IN ('aimt301','aimt303','aimt311','aimt313') AND INSTR(tlf01,'-')=0
   AND to_char(tlf06,'yyyyMM')= TO_CHAR(to_date(tm.yy||tm.mm,'yyyyMM'),'yyyyMM')
   AND tlf902 NOT IN( SELECT jce02 FROM jce_file WHERE jceacti='Y')
@@ -1100,7 +1100,7 @@ END FUNCTION
 FUNCTION p900_p_5()  #更新WIP杂项入库数量、金额
 
 --更新WIP杂项入库数量  ta_ccc217
- UPDATE ta_ccp_file SET ta_ccc217=(SELECT SUM(tlf10*TLF907)
+ UPDATE ta_ccp_file SET ta_ccc217=(SELECT SUM(tlf10*TLF907*tlf60) # darcy:2025/12/02 add tlf60 单位换算
   FROM tlf_file  WHERE tlf13 IN('aimt312','aimt302') AND INSTR(tlf01,'-')=0
   AND to_char(tlf06,'yyyyMM')= TO_CHAR(to_date(tm.yy||tm.mm,'yyyyMM'),'yyyyMM')
   AND tlf902 NOT IN( SELECT jce02 FROM jce_file WHERE jceacti='Y')
@@ -1111,7 +1111,7 @@ FUNCTION p900_p_5()  #更新WIP杂项入库数量、金额
   AND tlf902 IN( SELECT tc_jcf02 FROM tc_jcf_file WHERE tc_jcfacti='Y'))
    AND ta_ccc02=tm.yy AND ta_ccc03=tm.mm 
 
- UPDATE ta_ccp_file SET ta_ccc217=ta_ccc217+(SELECT nvl(SUM(tlf10*TLF907*ljyl),0)
+ UPDATE ta_ccp_file SET ta_ccc217=ta_ccc217+(SELECT nvl(SUM(tlf10*TLF907*tlf60*ljyl),0) # darcy:2025/12/02 add tlf60 单位换算
   FROM tlf_file,ex_bom_cp  WHERE tlf01=cplh AND tlf13 IN('aimt312','aimt302') AND INSTR(tlf01,'-')>0 AND INSTR(yjlh,'-')=0
     AND to_char(sxrq1,'yyyyMM')<=TO_CHAR(to_date(tm.yy||tm.mm,'yyyyMM'),'yyyyMM')
     AND ex_bom_cp.yy = tm.yy AND ex_bom_cp.mm = tm.mm
@@ -1129,7 +1129,7 @@ FUNCTION p900_p_5()  #更新WIP杂项入库数量、金额
    AND ta_ccc02=tm.yy AND ta_ccc03=tm.mm 
    
 --入到非WIP带‘-’料号需要转下阶
- UPDATE ta_ccp_file SET ta_ccc217=ta_ccc217+(SELECT nvl(SUM(tlf10*TLF907*ljyl),0)
+ UPDATE ta_ccp_file SET ta_ccc217=ta_ccc217+(SELECT nvl(SUM(tlf10*TLF907*tlf60*ljyl),0) # darcy:2025/12/02 add tlf60 单位换算
   FROM tlf_file,ex_bom_cp  WHERE tlf01=cplh AND tlf13 IN('aimt302','aimt312') AND INSTR(tlf01,'-')>0 AND INSTR(yjlh,'-')=0
     AND to_char(sxrq1,'yyyyMM')<=TO_CHAR(to_date(tm.yy||tm.mm,'yyyyMM'),'yyyyMM')
     AND ex_bom_cp.yy = tm.yy AND ex_bom_cp.mm = tm.mm
@@ -1148,7 +1148,7 @@ FUNCTION p900_p_5()  #更新WIP杂项入库数量、金额
 
 --更新WIP杂项出库数量 ta_ccc81
  --正常出库
- UPDATE ta_ccp_file SET ta_ccc81=(SELECT NVL(SUM(tlf10*TLF907*tlf12),0)
+ UPDATE ta_ccp_file SET ta_ccc81=(SELECT NVL(SUM(tlf10*TLF907*tlf60),0) # darcy:2025/12/02 add tlf60 单位换算
   FROM tlf_file  WHERE tlf13 IN ('aimt301','aimt303','aimt311','aimt313') AND INSTR(tlf01,'-')=0
   AND to_char(tlf06,'yyyyMM')= TO_CHAR(to_date(tm.yy||tm.mm,'yyyyMM'),'yyyyMM')
   AND tlf902 NOT IN( SELECT jce02 FROM jce_file WHERE jceacti='Y')
@@ -1161,7 +1161,7 @@ FUNCTION p900_p_5()  #更新WIP杂项入库数量、金额
 
 --带'-'的料号，要展尾阶 luoyb
   --领用带‘-’料号需要转下阶
- UPDATE ta_ccp_file SET ta_ccc81=ta_ccc81+(SELECT NVL(SUM(tlf10*TLF907*tlf12*ljyl),0)
+ UPDATE ta_ccp_file SET ta_ccc81=ta_ccc81+(SELECT NVL(SUM(tlf10*TLF907*tlf60*ljyl),0) # darcy:2025/12/02 add tlf60 单位换算
   FROM tlf_file,ex_bom_cp WHERE tlf01=cplh AND tlf13 IN ('aimt301','aimt303','aimt311','aimt313') AND INSTR(tlf01,'-')>0 AND INSTR(yjlh,'-')=0
     AND to_char(sxrq1,'yyyyMM')<=TO_CHAR(to_date(tm.yy||tm.mm,'yyyyMM'),'yyyyMM')
     AND ex_bom_cp.yy = tm.yy AND ex_bom_cp.mm = tm.mm
@@ -1179,7 +1179,7 @@ FUNCTION p900_p_5()  #更新WIP杂项入库数量、金额
    AND ta_ccc02=tm.yy AND ta_ccc03=tm.mm 
 
  --从非WIP领用带‘-’料号需要转下阶
- UPDATE ta_ccp_file SET ta_ccc81=ta_ccc81+(SELECT NVL(SUM(tlf10*TLF907*tlf12*ljyl),0)
+ UPDATE ta_ccp_file SET ta_ccc81=ta_ccc81+(SELECT NVL(SUM(tlf10*TLF907*tlf60*ljyl),0) # darcy:2025/12/02 add tlf60 单位换算
   FROM tlf_file,ex_bom_cp  WHERE tlf01=cplh AND tlf13 IN ('aimt301','aimt303','aimt311','aimt313') AND INSTR(tlf01,'-')>0 AND INSTR(yjlh,'-')=0
     AND to_char(sxrq1,'yyyyMM')<=TO_CHAR(to_date(tm.yy||tm.mm,'yyyyMM'),'yyyyMM')
     AND ex_bom_cp.yy = tm.yy AND ex_bom_cp.mm = tm.mm

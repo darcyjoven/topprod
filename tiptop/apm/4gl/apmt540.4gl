@@ -31,6 +31,8 @@ GLOBALS "../../config/top.global"
     g_argv10          LIKE sfb_file.sfb08,      #轉入下一作業數量
     g_argv12          STRING                    #No.FUN-630010 執行功能
 
+    
+
 MAIN
    IF FGL_GETENV("FGLGUI") <> "0" THEN
       OPTIONS

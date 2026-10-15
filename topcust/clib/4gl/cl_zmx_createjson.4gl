@@ -559,6 +559,18 @@ DEFINE l_str             STRING
 
     INITIALIZE l_str TO NULL       
 
+    let l_detail.productName =  cl_replace_str(l_detail.productName,'"',"\\\"")  # 双引号
+    let l_detail.productName =  cl_replace_str(l_detail.productName,"\t","\\t")  # 制表符
+    let l_detail.productName =  cl_replace_str(l_detail.productName,"\n","\\n")  # 换行
+    let l_detail.productName =  cl_replace_str(l_detail.productName,"\r","\\r")  # 回车
+    let l_detail.productName =  cl_replace_str(l_detail.productName,"\f","\\f")  # 换页
+
+    let l_detail.specifications=  cl_replace_str(l_detail.specifications,'"',"\\\"")  # 双引号
+    let l_detail.specifications=  cl_replace_str(l_detail.specifications,"\t","\\t")  # 制表符
+    let l_detail.specifications=  cl_replace_str(l_detail.specifications,"\n","\\n")  # 换行
+    let l_detail.specifications=  cl_replace_str(l_detail.specifications,"\r","\\r")  # 回车
+    let l_detail.specifications=  cl_replace_str(l_detail.specifications,"\f","\\f")  # 换页
+
     LET l_str ='"serialNumber":"',    l_detail.serialNumber,'",',     
                '"productCode":"',     l_detail.productCode,'",',      
                '"productName":"',     l_detail.productName,'",',      

@@ -124,7 +124,7 @@ function scimp500(p_date,p_version,p_unsign,p_tran,p_send)
         CALL l_channel.writeLine(l_str)
         call l_channel.close()
 
-        call scimp500_mail("dong.xia@forewin-sz.com.cn")
+        call scimp500_mail(g_date,g_version,"dong.xia@forewin-sz.com.cn","betty.lv@forewin-sz.com.cn;qingyun.sun@forewin-sz.com.cn")
     end if
 end function
 
@@ -1198,18 +1198,19 @@ function simp500_unsign(p_yy,p_mm)
 end function
 
 
-function scimp500_mail(p_recipient)
-    define p_recipient,l_body       string
+function scimp500_mail(p_date,p_version,p_recipient,p_cc)
+    define p_recipient,l_body,p_cc       string
     define l_ok varchar(1)
-    define l_attach string
+    define l_attach,l_att string
+    define p_date date,p_version varchar(20)
 
     call cl_record_header("运行结果查询")
 
-    call scimq500(g_date,g_version,"N")
+    call scimq500(p_date,p_version,"N")
     call scimq500_b_fill()
 
-    let l_attach = scimq500_output(g_date,g_version)
-    let l_attach = l_attach,";", cl_expexcel10_nogui(
+    call scimq500_output(p_date,p_version) returning l_attach,l_att
+    let l_attach = l_attach,";",l_att,";", cl_expexcel10_nogui(
         '/u1/usr/tiptop/typst/projects/cimr500/interface.xml',
         's_total',base.typeinfo.create(g_total),
         's_day',base.typeinfo.create(g_daily),
@@ -1223,13 +1224,14 @@ function scimp500_mail(p_recipient)
     call cl_record_html("error,warn") returning l_body
 
     call cs_mail_sendcc(
-    sfmt("日进出报表 %1，运行时间 %2",g_date using "yy-mm-dd",current year to second),
+    sfmt("日进出报表 %1，运行时间 %2",p_date using "yy-mm-dd",current year to second),
     l_body,
     p_recipient,
-    "betty.lv@forewin-sz.com.cn",
+    p_cc,
     "darcy.li@forewin-sz.com.cn",
     l_attach
     ) returning l_ok
 
     message "发送结果"||l_ok
 end function
+ 

@@ -39,15 +39,15 @@
 # Modify.........: No.FUN-750051 07/05/22 By johnray 連續二次查詢key值時,若第二次查詢不到key值時,會顯示錯誤key值
 # Modify.........: No.FUN-770038 07/07/13 By Carrier 報表轉Crystal Report格式
 # Modify.........: No.FUN-7C0050 08/01/15 By johnray 串查程序代碼添加共用 ACTION 的引用
-# Modify.........: No.FUN-850038 08/05/12 by TSD.zeak 自訂欄位功能修改 
+# Modify.........: No.FUN-850038 08/05/12 by TSD.zeak 自訂欄位功能修改
 # Modify.........: No.CHI-8A0001 08/11/04 By tsai_yen 寫ora取代"只能使用相同群的資料"的MATCHES字串
 # Modify.........: No.TQC-970153 09/07/17 By Carrier l_sum1/l_sum2計算時,卻掉單身null值
 # Modify.........: No.FUN-980030 09/08/31 By Hiko 加上GP5.2的相關設定
 # Modify.........: No.FUN-9B0098 10/02/24 by tommas delete cl_doc
-# Modify.........: No.MOD-B30108 11/03/11 by Dido 若單身幣別與單頭幣別不同時,nnp08不可為空 
+# Modify.........: No.MOD-B30108 11/03/11 by Dido 若單身幣別與單頭幣別不同時,nnp08不可為空
 # Modify.........: No.FUN-B50063 11/05/25 By xianghui BUG修改，刪除時提取資料報400錯誤
 # Modify.........: No.TQC-B60086 11/06/16 By zhangweib CONSTURCT時加上資料建立者和資料建立部門
- 
+
 # Modify.........: No:FUN-C10039 12/02/02 by Hiko 整批修改資料歸屬設定
 # Modify.........: No.CHI-C30002 12/05/23 By yuhuabao 離開單身時若單身無資料提示是否刪除單頭資料
 # Modify.........: No.TQC-C40191 12/07/18 By lujh 組sql發生錯誤
@@ -56,9 +56,9 @@
 # Modify.........: No:FUN-D30032 13/04/03 By xumm 修改單身新增時按下放棄鍵未執行AFTER INSERT的問題
 
 DATABASE ds
- 
+
 GLOBALS "../../config/top.global"
- 
+
 DEFINE
     g_nno   RECORD LIKE nno_file.*,
     g_nno_t RECORD LIKE nno_file.*,
@@ -126,20 +126,20 @@ DEFINE
     g_fah   RECORD LIKE fah_file.*,
     l_azi   RECORD LIKE azi_file.*,
     c_nnp04        LIKE nnp_file.nnp04,                   #主類判繼 #No.FUN-680107 VARCHAR(1)
-    g_wc,g_wc2,g_sql  STRING,                             #No.FUN-580092 HCN 
+    g_wc,g_wc2,g_sql  STRING,                             #No.FUN-580092 HCN
     g_cmd               LIKE type_file.chr1000,           #No.FUN-680107 VARCHAR(200)
     g_t1                LIKE oay_file.oayslip,            #No.FUN-680107 VARCHAR(5)
     g_rec_b             LIKE type_file.num5,              #單身筆數 #No.FUN-680107 SMALLINT
     l_ac                LIKE type_file.num5               #目前處理的ARRAY CNT #No.FUN-680107 SMALLINT
- 
-DEFINE g_forupd_sql     STRING                            #SELECT ... FOR UPDATE SQL   
+
+DEFINE g_forupd_sql     STRING                            #SELECT ... FOR UPDATE SQL
 DEFINE g_before_input_done  LIKE type_file.num5           #No.FUN-680107 SMALLINT
 DEFINE g_chr            LIKE type_file.chr1               #No.FUN-680107 VARCHAR(1)
 DEFINE g_cnt            LIKE type_file.num10              #No.FUN-680107 INTEGER
 DEFINE g_i              LIKE type_file.num5               #count/index for any purpose #No.FUN-680107 SMALLINT
 DEFINE g_msg            LIKE type_file.chr1000            #No.FUN-680107 VARCHAR(72)
 DEFINE g_head1          STRING
- 
+
 DEFINE   g_row_count    LIKE type_file.num10              #No.FUN-680107 INTEGER
 DEFINE   g_curs_index   LIKE type_file.num10              #No.FUN-680107 INTEGER
 DEFINE   g_jump         LIKE type_file.num10              #No.FUN-680107 INTEGER
@@ -147,41 +147,41 @@ DEFINE   mi_no_ask      LIKE type_file.num5               #No.FUN-680107 SMALLIN
 DEFINE   g_str          STRING                            #No.FUN-770038
 DEFINE g_argv1     LIKE nno_file.nno01     #FUN-7C0050
 DEFINE g_argv2     STRING                  #FUN-7C0050      #執行功能
- 
+
 MAIN
 #     DEFINEl_time LIKE type_file.chr8               #No.FUN-6A0082
 DEFINE p_row,p_col      LIKE type_file.num5               #No.FUN-680107 SMALLINT
    OPTIONS
       INPUT NO WRAP
    DEFER INTERRUPT
- 
+
    IF (NOT cl_user()) THEN
       EXIT PROGRAM
    END IF
- 
+
    WHENEVER ERROR CALL cl_err_msg_log
- 
+
    IF (NOT cl_setup("ANM")) THEN
       EXIT PROGRAM
    END IF
- 
- 
+
+
      CALL  cl_used(g_prog,g_time,1) RETURNING g_time #No.MOD-580088  HCN 20050818  #No.FUN-6A0082
- 
+
    LET g_argv1=ARG_VAL(1)   #           #FUN-7C0050
    LET g_argv2=ARG_VAL(2)   #執行功能   #FUN-7C0050
- 
+
    LET g_forupd_sql = "SELECT * FROM nno_file WHERE nno01 = ? FOR UPDATE"
    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
    DECLARE i711_cl CURSOR FROM g_forupd_sql
- 
+
    LET g_chr='4'                          #出售
    LET p_row = 3 LET p_col = 20
    OPEN WINDOW i711_w AT p_row,p_col
      WITH FORM "anm/42f/anmi711"  ATTRIBUTE (STYLE = g_win_style CLIPPED) #No.FUN-580092 HCN
- 
+
     CALL cl_ui_init()
- 
+
    #FUN-7C0050
    IF NOT cl_null(g_argv1) THEN
       CASE g_argv2
@@ -195,21 +195,21 @@ DEFINE p_row,p_col      LIKE type_file.num5               #No.FUN-680107 SMALLIN
             IF cl_chk_act_auth() THEN
                CALL i711_a()
             END IF
-         OTHERWISE        
-            CALL i711_q() 
+         OTHERWISE
+            CALL i711_q()
       END CASE
    END IF
    #--
- 
+
    CALL i711_menu()
    CLOSE WINDOW i711_w
      CALL  cl_used(g_prog,g_time,2) RETURNING g_time #No.MOD-580088  HCN 20050818  #No.FUN-6A0082
- 
+
 END MAIN
- 
+
 FUNCTION i711_cs()
 DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
- 
+
    CLEAR FORM                                    #清除畫面
    CALL g_nnp.clear()
    CALL cl_set_head_visible("","YES")   #No.FUN-6B0030
@@ -226,7 +226,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                              nnoud11,nnoud12,nnoud13,nnoud14,nnoud15
                              #FUN-850038    ----end----
                             ,nnooriu,nnoorig   #TQC-B60086   Add
- 
+
                #No.FUN-580031 --start--     HCN
                BEFORE CONSTRUCT
                   CALL cl_qbe_init()
@@ -259,29 +259,29 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
 		#No.FUN-580031 --start--     HCN
                  ON ACTION qbe_select
 		   CALL cl_qbe_list() RETURNING lc_qbe_sn
 		   CALL cl_qbe_display_condition(lc_qbe_sn)
 		#No.FUN-580031 --end--       HCN
    END CONSTRUCT
- 
+
    IF INT_FLAG THEN
       RETURN
    END IF
- 
- 
+
+
    CONSTRUCT g_wc2 ON nnp02,nnp03,nnn02,nnp04,nnp05,nnp06,nnp07,nnp08,nnp09
                       #No.FUN-850038 --start--
                       ,nnpud01,nnpud02,nnpud03,nnpud04,nnpud05,
@@ -296,7 +296,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
                      s_nnp[1].nnpud06,s_nnp[1].nnpud07,s_nnp[1].nnpud08,s_nnp[1].nnpud09,s_nnp[1].nnpud10,
                      s_nnp[1].nnpud11,s_nnp[1].nnpud12,s_nnp[1].nnpud13,s_nnp[1].nnpud14,s_nnp[1].nnpud15
                      #No.FUN-850038 ---end---
- 
+
 		#No.FUN-580031 --start--     HCN
 		BEFORE CONSTRUCT
 		   CALL cl_qbe_display_condition(lc_qbe_sn)
@@ -331,23 +331,23 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
 		#No.FUN-580031 --start--     HCN
                     ON ACTION qbe_save
 		       CALL cl_qbe_save()
 		#No.FUN-580031 --end--       HCN
    END CONSTRUCT
- 
+
    IF INT_FLAG THEN
       LET INT_FLAG = 0
       RETURN
@@ -358,19 +358,19 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
    #   IF g_priv2='4' THEN                           #只能使用自己的資料
    #      LET g_wc = g_wc clipped," AND nnouser = '",g_user,"'"
    #   END IF
- 
+
    #   IF g_priv3='4' THEN                           #只能使用相同群的資料
    #      LET g_wc = g_wc clipped," AND nnogrup LIKE '",g_grup CLIPPED,"%'"
         #CHI-8A0001 寫ora
    #   END IF
- 
+
    #   IF g_priv3 MATCHES "[5678]" THEN    #TQC-5C0134群組權限
    #      LET g_wc = g_wc clipped," AND nnogrup IN ",cl_chk_tgrup_list()
    #   END IF
    LET g_wc = g_wc CLIPPED,cl_get_extra_cond('nnouser', 'nnogrup')
    #End:FUN-980030
- 
- 
+
+
    IF g_wc2 = " 1=1" THEN                      # 若單身未輸入條件
       LET g_sql = "SELECT nno01 FROM nno_file",
                   " WHERE ", g_wc CLIPPED,
@@ -387,7 +387,7 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
    PREPARE i711_prepare FROM g_sql
    DECLARE i711_cs                         #SCROLL CURSOR
        SCROLL CURSOR WITH HOLD FOR i711_prepare
- 
+
    IF g_wc2 = " 1=1" THEN                      # 取合乎條件筆數
       LET g_sql="SELECT COUNT(*) FROM nno_file WHERE ",g_wc CLIPPED
    ELSE
@@ -396,11 +396,11 @@ DEFINE  lc_qbe_sn       LIKE    gbm_file.gbm01    #No.FUN-580031  HCN
    END IF
    PREPARE i711_prcount FROM g_sql
    DECLARE i711_count CURSOR WITH HOLD FOR i711_prcount
- 
+
 END FUNCTION
- 
+
 FUNCTION i711_menu()
- 
+
    WHILE TRUE
       CALL i711_bp("G")
       CASE g_action_choice
@@ -458,13 +458,13 @@ FUNCTION i711_menu()
       END CASE
    END WHILE
 END FUNCTION
- 
+
 FUNCTION i711_a()
- 
+
    IF s_anmshut(0) THEN
       RETURN
    END IF
- 
+
    MESSAGE ""
    CLEAR FORM
    CALL g_nnp.clear()
@@ -472,7 +472,7 @@ FUNCTION i711_a()
    INITIALIZE g_nno_t.* TO NULL
    LET g_nno_o.* = g_nno.*
    CALL cl_opmsg('a')
- 
+
    WHILE TRUE
       LET g_nno.nno03  =g_today
       LET g_nno.nno07=0
@@ -485,70 +485,70 @@ FUNCTION i711_a()
       LET g_nno.nnogrup=g_grup
       LET g_nno.nnodate=g_today
       BEGIN WORK
- 
+
       CALL i711_i("a")                #輸入單頭
- 
+
       IF INT_FLAG THEN
          LET INT_FLAG = 0
          CALL cl_err('',9001,0)
          ROLLBACK WORK
          EXIT WHILE
       END IF
- 
+
       IF g_nno.nno01 IS NULL THEN
          CONTINUE WHILE
       END IF
- 
+
       IF g_nno.nno08 IS NULL THEN
          LET g_nno.nno08 = 0
       END IF
- 
+
       INSERT INTO nno_file VALUES (g_nno.*)
       IF STATUS THEN
 #        CALL cl_err(g_nno.nno01,STATUS,1)   #No.FUN-660148
          CALL cl_err3("ins","nno_file",g_nno.nno01,"",STATUS,"","",1)  #No.FUN-660148
          CONTINUE WHILE
       END IF
- 
+
       COMMIT WORK
       SELECT nno01 INTO g_nno.nno01 FROM nno_file
        WHERE nno01 = g_nno.nno01
- 
+
       LET g_nno_t.* = g_nno.*
- 
+
       LET g_rec_b = 0
- 
+
       CALL i711_b()                      #輸入單身
- 
+
       EXIT WHILE
    END WHILE
- 
+
 END FUNCTION
- 
+
 FUNCTION i711_u()
- 
+
    IF s_anmshut(0) THEN
       RETURN
    END IF
- 
+
    IF g_nno.nno01 IS NULL THEN
       CALL cl_err('',-400,0)
       RETURN
    END IF
- 
+
    SELECT * INTO g_nno.* FROM nno_file
     WHERE nno01 = g_nno.nno01
- 
+
    IF g_nno.nnoacti = 'N' THEN
       CALL cl_err('','aoo-062',0)
       RETURN
    END IF
- 
+
    MESSAGE ""
    CALL cl_opmsg('u')
    LET g_nno_o.* = g_nno.*
    BEGIN WORK
- 
+
    OPEN i711_cl USING g_nno.nno01
    IF STATUS THEN
       CALL cl_err("OPEN i711_cl:", STATUS, 1)
@@ -556,7 +556,7 @@ FUNCTION i711_u()
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    FETCH i711_cl INTO g_nno.*          # 鎖住將被更改或取消的資料
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_nno.nno01,SQLCA.sqlcode,0)     # 資料被他人LOCK
@@ -564,15 +564,15 @@ FUNCTION i711_u()
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    CALL i711_show()
- 
+
    WHILE TRUE
       LET g_nno.nnomodu=g_user
       LET g_nno.nnodate=g_today
- 
+
       CALL i711_i("u")                      #欄位更改
- 
+
       IF INT_FLAG THEN
          LET INT_FLAG = 0
          LET g_nno.*=g_nno_t.*
@@ -580,28 +580,28 @@ FUNCTION i711_u()
          CALL cl_err('','9001',0)
          EXIT WHILE
       END IF
- 
+
       UPDATE nno_file SET * = g_nno.* WHERE nno01 = g_nno_t.nno01
       IF STATUS THEN
 #        CALL cl_err(g_nno.nno01,STATUS,0)   #No.FUN-660148
          CALL cl_err3("upd","nno_file",g_nno_t.nno01,"",STATUS,"","",1)  #No.FUN-660148
          CONTINUE WHILE
       END IF
- 
+
       EXIT WHILE
    END WHILE
- 
+
    CLOSE i711_cl
    COMMIT WORK
- 
+
 END FUNCTION
- 
+
 FUNCTION i711_i(p_cmd)
   DEFINE p_cmd           LIKE type_file.chr1       #a:輸入 u:更改 #No.FUN-680107 VARCHAR(1)
   DEFINE l_flag          LIKE type_file.chr1       #判斷必要欄位是否有輸入 #No.FUN-680107 VARCHAR(1)
   DEFINE l_yy,l_mm       LIKE type_file.num5       #No.FUN-680107 SMALLINT
   DEFINE l_nnp09         LIKE nnp_file.nnp09
- 
+
    CALL cl_set_head_visible("","YES")   #No.FUN-6B0030
    INPUT BY NAME g_nno.nno01,g_nno.nno02,g_nno.nno03,g_nno.nno06,g_nno.nno13, g_nno.nnooriu,g_nno.nnoorig,
                  g_nno.nno04,g_nno.nno05,g_nno.nno07,g_nno.nno08,g_nno.nno09,
@@ -610,16 +610,16 @@ FUNCTION i711_i(p_cmd)
                  ,g_nno.nnoud01,g_nno.nnoud02,g_nno.nnoud03,g_nno.nnoud04,
                  g_nno.nnoud05,g_nno.nnoud06,g_nno.nnoud07,g_nno.nnoud08,
                  g_nno.nnoud09,g_nno.nnoud10,g_nno.nnoud11,g_nno.nnoud12,
-                 g_nno.nnoud13,g_nno.nnoud14,g_nno.nnoud15 
+                 g_nno.nnoud13,g_nno.nnoud14,g_nno.nnoud15
                  #FUN-850038     ----end----
          WITHOUT DEFAULTS
- 
+
       BEFORE INPUT
          LET g_before_input_done = FALSE
          CALL i711_set_entry(p_cmd)
          CALL i711_set_no_entry(p_cmd)
          LET g_before_input_done = TRUE
- 
+
       AFTER FIELD nno01  #合約號碼
          IF NOT cl_null(g_nno.nno01) THEN
              IF p_cmd = "a" OR                    # 若輸入或更改且改KEY
@@ -635,7 +635,7 @@ FUNCTION i711_i(p_cmd)
                 LET g_nno_o.nno01 = g_nno.nno01
              END IF
          END IF
- 
+
       AFTER FIELD nno02  #信貸銀行
          IF NOT cl_null(g_nno.nno02) THEN
             CALL i711_nno02('a')
@@ -646,7 +646,7 @@ FUNCTION i711_i(p_cmd)
                NEXT FIELD nno02
             END IF
          END IF
- 
+
       AFTER FIELD nno04  #核准日期
          IF NOT cl_null(g_nno.nno04) THEN
             IF g_nno.nno04 < g_nno.nno03 THEN  #核淮日期不可小於申請日期
@@ -655,7 +655,7 @@ FUNCTION i711_i(p_cmd)
                NEXT FIELD nno04
             END IF
          END IF
- 
+
       AFTER FIELD nno05  #有效日期
          IF NOT cl_null(g_nno.nno05) THEN
             IF g_nno.nno05 < g_nno.nno03 THEN  #有效日期不可小於申請日期
@@ -664,12 +664,12 @@ FUNCTION i711_i(p_cmd)
                NEXT FIELD nno05
             END IF
          END IF
- 
+
       AFTER FIELD nno06  #申請幣別
          IF NOT cl_null(g_nno.nno06) THEN
              SELECT azi04 INTO t_azi04 FROM azi_file    #MOD-530816
               WHERE azi01 = g_nno.nno06   #MOD-530816
-            SELECT * INTO l_azi.* FROM azi_file                
+            SELECT * INTO l_azi.* FROM azi_file
              WHERE azi01=g_nno.nno06
                AND aziacti = 'Y'
             IF STATUS THEN
@@ -678,7 +678,7 @@ FUNCTION i711_i(p_cmd)
                NEXT FIELD nno06
             END IF
          END IF
- 
+
       AFTER FIELD nno07  #申請金額
          IF NOT cl_null(g_nno.nno07) THEN
             IF g_nno.nno07 < 0 THEN
@@ -688,7 +688,7 @@ FUNCTION i711_i(p_cmd)
              LET g_nno.nno07 = cl_digcut(g_nno.nno07,t_azi04)   #MOD-530816
              DISPLAY BY NAME g_nno.nno07   #MOD-530816
          END IF
- 
+
       AFTER FIELD nno08  #核淮金額
          IF NOT cl_null(g_nno.nno08) THEN
             IF g_nno.nno08 < 0 THEN
@@ -698,12 +698,12 @@ FUNCTION i711_i(p_cmd)
              LET g_nno.nno08 = cl_digcut(g_nno.nno08,t_azi04)   #MOD-530816
              DISPLAY BY NAME g_nno.nno08   #MOD-530816
          END IF
- 
+
       AFTER FIELD nno09  #暫停
          IF g_nno.nno09 NOT MATCHES '[YN]' THEN
             NEXT FIELD nno09
          END IF
- 
+
       #FUN-850038     ---start---
       AFTER FIELD nnoud01
          IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
@@ -736,14 +736,14 @@ FUNCTION i711_i(p_cmd)
       AFTER FIELD nnoud15
          IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
       #FUN-850038     ----end----
- 
+
       AFTER INPUT
          LET g_nno.nnouser = s_get_data_owner("nno_file") #FUN-C10039
          LET g_nno.nnogrup = s_get_data_group("nno_file") #FUN-C10039
          IF INT_FLAG THEN
             EXIT INPUT
          END IF
- 
+
       ON ACTION controlp
          CASE
             WHEN INFIELD(nno02)  #查詢信貸銀行
@@ -767,12 +767,12 @@ FUNCTION i711_i(p_cmd)
                DISPLAY BY NAME g_nno.nno06
                NEXT FIELD nno06
          END CASE
- 
+
       ON ACTION CONTROLF                  #欄位說明
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
-        #MOD-650015 --start 
+
+        #MOD-650015 --start
       #ON ACTION CONTROLO                        # 沿用所有欄位
       #   IF INFIELD(nno01) THEN
       #      LET g_nno.* = g_nno_t.*
@@ -780,49 +780,49 @@ FUNCTION i711_i(p_cmd)
       #      NEXT FIELD nno01
       #   END IF
         #MOD-650015 --end
- 
+
       ON ACTION CONTROLR
          CALL cl_show_req_fields()
- 
+
       ON ACTION CONTROLG
          CALL cl_cmdask()
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
- 
+
+
    END INPUT
- 
+
 END FUNCTION
- 
+
 FUNCTION i711_q()
- 
+
     LET g_row_count = 0
     LET g_curs_index = 0
     CALL cl_navigator_setting( g_curs_index, g_row_count )
     INITIALIZE g_nno.* TO NULL               #No.FUN-6A0011
- 
+
    MESSAGE ""
    CALL cl_opmsg('q')
    DISPLAY '   ' TO FORMONLY.cnt
- 
+
    CALL i711_cs()
- 
+
    IF INT_FLAG THEN
       LET INT_FLAG = 0
       INITIALIZE g_nno.* TO NULL
       RETURN
    END IF
- 
+
    MESSAGE " SEARCHING ! "
- 
+
    OPEN i711_cs                               # 從DB產生合乎條件TEMP(0-30秒)
    IF SQLCA.sqlcode THEN
       CALL cl_err('',SQLCA.sqlcode,0)
@@ -833,16 +833,16 @@ FUNCTION i711_q()
       DISPLAY g_row_count TO FORMONLY.cnt
       CALL i711_fetch('F')                  # 讀出TEMP第一筆並顯示
    END IF
- 
+
    MESSAGE ""
- 
+
 END FUNCTION
- 
+
 FUNCTION i711_fetch(p_flag)
 DEFINE
    p_flag          LIKE type_file.chr1,     #處理方式   #No.FUN-680107 VARCHAR(1)
    l_abso          LIKE type_file.num10     #絕對的筆數 #No.FUN-680107 INTEGER
- 
+
    CASE p_flag
       WHEN 'N' FETCH NEXT     i711_cs INTO g_nno.nno01
       WHEN 'P' FETCH PREVIOUS i711_cs INTO g_nno.nno01
@@ -855,16 +855,16 @@ DEFINE
                PROMPT g_msg CLIPPED,': ' FOR g_jump
                   ON IDLE g_idle_seconds
                      CALL cl_on_idle()
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
+
                END PROMPT
                IF INT_FLAG THEN
                    LET INT_FLAG = 0
@@ -874,7 +874,7 @@ DEFINE
             FETCH ABSOLUTE g_jump i711_cs INTO g_nno.nno01
             LET mi_no_ask = FALSE
    END CASE
- 
+
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_nno.nno01,SQLCA.sqlcode,0)
       INITIALIZE g_nno.* TO NULL  #TQC-6B0105
@@ -887,10 +887,10 @@ DEFINE
          WHEN 'L' LET g_curs_index = g_row_count
          WHEN '/' LET g_curs_index = g_jump
       END CASE
- 
+
       CALL cl_navigator_setting( g_curs_index, g_row_count )
    END IF
- 
+
    SELECT * INTO g_nno.* FROM nno_file WHERE nno01 = g_nno.nno01
    IF SQLCA.sqlcode THEN
 #     CALL cl_err(g_nno.nno01,SQLCA.sqlcode,0)   #No.FUN-660148
@@ -902,14 +902,14 @@ DEFINE
        LET g_data_group = g_nno.nnogrup     #No.FUN-4C0063
       CALL i711_show()
    END IF
- 
- 
+
+
 END FUNCTION
- 
+
 FUNCTION i711_show()
- 
+
    LET g_nno_t.* = g_nno.*                #保存單頭舊值
- 
+
    DISPLAY BY NAME g_nno.nno01,g_nno.nno02,g_nno.nno03,g_nno.nno04,g_nno.nno05, g_nno.nnooriu,g_nno.nnoorig,
                    g_nno.nno09,g_nno.nno06,g_nno.nno07,g_nno.nno08,g_nno.nno13,
                    g_nno.nnouser,g_nno.nnogrup,g_nno.nnomodu,g_nno.nnodate,g_nno.nnoacti
@@ -917,51 +917,51 @@ FUNCTION i711_show()
                    ,g_nno.nnoud01,g_nno.nnoud02,g_nno.nnoud03,g_nno.nnoud04,
                    g_nno.nnoud05,g_nno.nnoud06,g_nno.nnoud07,g_nno.nnoud08,
                    g_nno.nnoud09,g_nno.nnoud10,g_nno.nnoud11,g_nno.nnoud12,
-                   g_nno.nnoud13,g_nno.nnoud14,g_nno.nnoud15 
+                   g_nno.nnoud13,g_nno.nnoud14,g_nno.nnoud15
                    #FUN-850038     ----end----
- 
+
    CALL i711_nno02('d')
- 
+
    DISPLAY BY NAME g_nno.nno08
- 
+
    CALL i711_b_fill(g_wc2)                    #單身
- 
+
     CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
 END FUNCTION
- 
+
 FUNCTION i711_nno02(p_cmd)                    #信貸銀行檔
    DEFINE p_cmd     LIKE type_file.chr1,      #No.FUN-680107 VARCHAR(1)
           l_alg021  LIKE alg_file.alg021
- 
+
    LET g_errno = ' '
    SELECT alg021 INTO l_alg021 FROM alg_file WHERE alg01=g_nno.nno02
- 
+
    CASE WHEN SQLCA.SQLCODE = 100  LET g_errno = 'aap-722'
                                   LET l_alg021 = NULL
         OTHERWISE          LET g_errno = SQLCA.SQLCODE USING '-------'
    END CASE
- 
+
    IF cl_null(g_errno) OR p_cmd = 'd' THEN
       DISPLAY l_alg021 TO FORMONLY.alg021
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION i711_r()
    DEFINE l_chr,l_sure LIKE type_file.chr1          #No.FUN-680107 VARCHAR(1)
    DEFINE l_cnt        LIKE type_file.num5          #No.FUN-680107 SMALLINT
    DEFINE l_count      LIKE type_file.num5          #No.FUN-680107 SMALLINT
- 
- 
+
+
    IF s_anmshut(0) THEN
       RETURN
    END IF
- 
+
    IF g_nno.nno01 IS NULL THEN
       CALL cl_err('',-400,0)
       RETURN
    END IF
- 
+
  #MOD-530816
    SELECT COUNT(*) INTO l_count FROM ala_file
           WHERE ala33 = g_nno.nno01 AND alafirm ='Y'
@@ -970,23 +970,30 @@ FUNCTION i711_r()
       RETURN
    END IF
  #END MOD-530816
- 
+
+    # darcy add s---
+    # 检查是否已存在单据
+    if not s_credit_chk_limit_del(g_nno.nno01) then
+        return
+    end if
+    # darcy add e---
+
    SELECT * INTO g_nno.* FROM nno_file WHERE nno01 = g_nno.nno01
- 
+
    IF g_nno.nno09   = 'Y' THEN
       CALL cl_err('','aoo-105',0)
       RETURN
    END IF
- 
+
    SELECT COUNT(*) INTO l_cnt FROM nne_file WHERE nne30=g_nno.nno01
- 
+
    IF l_cnt > 0 THEN
       CALL cl_err(g_nno.nno01,'anm-633',0)
       RETURN
    END IF
- 
+
    BEGIN WORK
- 
+
    OPEN i711_cl USING g_nno.nno01
    IF STATUS THEN
       CALL cl_err("OPEN i711_cl:", STATUS, 1)
@@ -994,16 +1001,16 @@ FUNCTION i711_r()
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    FETCH i711_cl INTO g_nno.*
    IF SQLCA.sqlcode THEN
       CALL cl_err(g_nno.nno01,SQLCA.sqlcode,0)
       ROLLBACK WORK
       RETURN
    END IF
- 
+
    CALL i711_show()
- 
+
    IF cl_delh(20,16) THEN
        INITIALIZE g_doc.* TO NULL          #No.FUN-9B0098 10/02/24
        LET g_doc.column1 = "nno01"         #No.FUN-9B0098 10/02/24
@@ -1017,7 +1024,7 @@ FUNCTION i711_r()
          ROLLBACK WORK
          RETURN
       END IF
- 
+
       DELETE FROM nnp_file WHERE nnp01 = g_nno.nno01
       IF SQLCA.SQLERRD[3]=0 THEN
 #        CALL cl_err('del nnp',STATUS,1)   #No.FUN-660148
@@ -1025,9 +1032,9 @@ FUNCTION i711_r()
          ROLLBACK WORK
          RETURN
       END IF
- 
+
       DELETE FROM nnq_file WHERE nnq01 = g_nnq.nnq01
- 
+
       LET g_msg=TIME
       CLEAR FORM
       CALL g_nnp.clear()
@@ -1041,7 +1048,7 @@ FUNCTION i711_r()
          COMMIT WORK
          RETURN
       END IF
-      #FUN-B50063-add-end-- 
+      #FUN-B50063-add-end--
       FETCH i711_count INTO g_row_count
       #FUN-B50063-add-start--
       IF STATUS OR (cl_null(g_row_count) OR  g_row_count = 0 ) THEN
@@ -1062,12 +1069,12 @@ FUNCTION i711_r()
          CALL i711_fetch('/')
       END IF
    END IF
- 
+
    CLOSE i711_cl
    COMMIT WORK
- 
+
 END FUNCTION
- 
+
 FUNCTION i711_b()
 DEFINE
    l_ac_t          LIKE type_file.num5,          #未取消的ARRAY CNT #No.FUN-680107 SMALLINT
@@ -1085,52 +1092,52 @@ DEFINE
    l_sum           LIKE nno_file.nno08,          #MOD-590274
    l_sum1          LIKE nno_file.nno08,          #FUN-740202
    l_act           LIKE type_file.chr1           #No.FUN-680107     VARCHAR(1)             #MOD-590274
- 
+
    LET g_action_choice = ""
    LET l_act = ""                           #MOD-590274
- 
+
    IF s_anmshut(0) THEN
       RETURN
    END IF
- 
+
    IF g_nno.nno01 IS NULL THEN
       RETURN
    END IF
- 
+
    IF g_nno.nnoacti = 'N' THEN
       CALL cl_err('','aoo-062',0)
       RETURN
    END IF
- 
+
    CALL cl_opmsg('b')
- 
+
    LET g_forupd_sql = "SELECT nnp02,nnp03,'',nnp04,nnp05,nnp06,nnp07,",
                       "       nnp08,nnp09 FROM nnp_file",
                       " WHERE nnp01=? AND nnp02=? FOR UPDATE"
    LET g_forupd_sql = cl_forupd_sql(g_forupd_sql)
    DECLARE i711_bcl CURSOR FROM g_forupd_sql      # LOCK CURSOR
- 
+
    LET l_allow_insert = cl_detail_input_auth("insert")
    LET l_allow_delete = cl_detail_input_auth("delete")
- 
+
    INPUT ARRAY g_nnp WITHOUT DEFAULTS FROM s_nnp.*
          ATTRIBUTE(COUNT=g_rec_b,MAXCOUNT=g_max_rec,UNBUFFERED,
                    INSERT ROW=l_allow_insert,DELETE ROW=l_allow_delete,APPEND ROW=l_allow_insert)
- 
+
       BEFORE INPUT
        IF g_rec_b!=0 THEN
          CALL fgl_set_arr_curr(l_ac)
        END IF
- 
+
       BEFORE ROW
          LET p_cmd=''
          LET l_ac = ARR_CURR()
         #LET g_nnp_t.* = g_nnp[l_ac].*  #BACKUP
          LET l_lock_sw = 'N'                   #DEFAULT
          LET l_n  = ARR_COUNT()
- 
+
          BEGIN WORK
- 
+
          OPEN i711_cl USING g_nno.nno01
          IF STATUS THEN
             CALL cl_err("OPEN i711_cl:", STATUS, 1)
@@ -1138,14 +1145,14 @@ DEFINE
             ROLLBACK WORK
             RETURN
          END IF
- 
+
          FETCH i711_cl INTO g_nno.*
          IF SQLCA.sqlcode THEN
             CALL cl_err(g_nno.nno01,SQLCA.sqlcode,0)
             ROLLBACK WORK
             RETURN
          END IF
- 
+
          IF g_rec_b >= l_ac THEN
             LET p_cmd='u'
             LET g_nnp_t.* = g_nnp[l_ac].*  #BACKUP
@@ -1165,7 +1172,7 @@ DEFINE
             END IF
             CALL cl_show_fld_cont()     #FUN-550037(smin)
          END IF
- 
+
       BEFORE INSERT
          LET l_act = "i"                   #MOD-590274
          LET l_n = ARR_COUNT()
@@ -1185,7 +1192,7 @@ DEFINE
          LET g_nnp_t.*=g_nnp[l_ac].*
          CALL cl_show_fld_cont()     #FUN-550037(smin)
          NEXT FIELD nnp02                  #跳下一ROW
- 
+
       AFTER INSERT
          IF INT_FLAG THEN
             CALL cl_err('',9001,0)
@@ -1198,7 +1205,7 @@ DEFINE
           # END IF
           # EXIT INPUT
          END IF
-         
+
          INSERT INTO nnp_file (nnp01,nnp02,nnp03,nnp04,nnp05,nnp06,  #No:BUG-470041 #MOD-470576
                                nnp07,nnp08,nnp09,nnp10,nnp11,nnp12,nnp13
                                #No.FUN-850038 --start--
@@ -1229,7 +1236,7 @@ DEFINE
             COMMIT WORK
          END IF
          LET l_act = ""  #MOD-590274
- 
+
       BEFORE FIELD nnp02                            #default 序號
          IF g_nnp[l_ac].nnp02 IS NULL OR g_nnp[l_ac].nnp02 = 0 THEN
             SELECT max(nnp02)+1 INTO g_nnp[l_ac].nnp02
@@ -1238,7 +1245,7 @@ DEFINE
                LET g_nnp[l_ac].nnp02 = 1
             END IF
          END IF
- 
+
       AFTER FIELD nnp02                        #check 序號是否重複
          IF NOT cl_null(g_nnp[l_ac].nnp02) THEN
             IF g_nnp[l_ac].nnp02 != g_nnp_t.nnp02 OR g_nnp_t.nnp02 IS NULL THEN
@@ -1251,7 +1258,7 @@ DEFINE
                END IF
             END IF
          END IF
- 
+
       AFTER FIELD nnp03   #授信類別
  #MOD-530816
          SELECT COUNT(alafirm) INTO l_count FROM ala_file
@@ -1302,7 +1309,7 @@ DEFINE
             DISPLAY BY NAME g_nnp[l_ac].nnn02
             #------MOD-5A0095 END------------
          END IF
- 
+
       AFTER FIELD nnp04   #綜合
          IF NOT cl_null(g_nnp[l_ac].nnp04) THEN
             IF g_nnp[l_ac].nnp04 NOT matches '[YN]' THEN
@@ -1362,21 +1369,21 @@ DEFINE
            #MOD-C80236---E---
             END IF
          END IF
- 
+
       AFTER FIELD nnp05   #利率
          IF NOT cl_null(g_nnp[l_ac].nnp05) THEN
             IF g_nnp[l_ac].nnp05 <0 THEN
                NEXT FIELD nnp05
             END IF
          END IF
- 
+
       AFTER FIELD nnp06   #費率
          IF NOT cl_null(g_nnp[l_ac].nnp06) THEN
             IF g_nnp[l_ac].nnp06 <0 THEN
                NEXT FIELD nnp06
             END IF
          END IF
- 
+
       AFTER FIELD nnp07   #幣別
          IF NOT cl_null(g_nnp[l_ac].nnp07) THEN
              SELECT azi04,azi07 INTO t_azi04,t_azi07 FROM azi_file    #MOD-530816
@@ -1392,7 +1399,7 @@ DEFINE
                NEXT FIELD nnp07
             END IF                    #aza17:本國幣別
          END IF
- 
+
 #MOD-5B0129
      BEFORE FIELD nnp08
         CALL s_curr3(g_nno.nno06,g_nno.nno03,'B') RETURNING l_rate1
@@ -1401,9 +1408,9 @@ DEFINE
        #LET g_nnp[l_ac].nnp08 = cl_digcut(g_nnp[l_ac].nnp08,t_azi07)         #MOD-D30043 mark
         DISPLAY BY NAME g_nnp[l_ac].nnp08
 #END MOD-5B0129
- 
-      
- 
+
+
+
       AFTER FIELD nnp08   #匯率
          IF NOT cl_null(g_nnp[l_ac].nnp08) THEN
             IF g_nnp[l_ac].nnp08 <0 THEN
@@ -1419,7 +1426,7 @@ DEFINE
            #LET g_nnp[l_ac].nnp08 = cl_digcut(g_nnp[l_ac].nnp08,t_azi07)        #MOD-D30043 mark
             DISPLAY BY NAME g_nnp[l_ac].nnp08
  #END MOD-530816
- 
+
             #MOD-590274 add --start
             LET l_sum = 0
             LET l_sum1= 0   #No.FUN-740202
@@ -1429,14 +1436,14 @@ DEFINE
                    IF cl_null(g_nnp[l_cnt].nnp09) OR cl_null(g_nnp[l_cnt].nnp08) THEN
                       CONTINUE FOR
                    END IF
-                   #No.TQC-970153  --End  
+                   #No.TQC-970153  --End
                    #No.FUN-740202  --Begin
                    IF g_nnp[l_cnt].nnp04 = 'Y' THEN
                       LET l_sum = l_sum + (g_nnp[l_cnt].nnp09*g_nnp[l_cnt].nnp08)
                    ELSE
                       LET l_sum1= l_sum1+ (g_nnp[l_cnt].nnp09*g_nnp[l_cnt].nnp08)
                    END IF
-                   #No.FUN-740202  --End  
+                   #No.FUN-740202  --End
                END FOR
             ELSE
                FOR l_cnt = 1 TO g_rec_b
@@ -1444,14 +1451,14 @@ DEFINE
                    IF cl_null(g_nnp[l_cnt].nnp09) OR cl_null(g_nnp[l_cnt].nnp08) THEN
                       CONTINUE FOR
                    END IF
-                   #No.TQC-970153  --End  
+                   #No.TQC-970153  --End
                    #No.FUN-740202  --Begin
                    IF g_nnp[l_cnt].nnp04 = 'Y' THEN
                       LET l_sum = l_sum + (g_nnp[l_cnt].nnp09*g_nnp[l_cnt].nnp08)
                    ELSE
                       LET l_sum1= l_sum1+ (g_nnp[l_cnt].nnp09*g_nnp[l_cnt].nnp08)
                    END IF
-                   #No.FUN-740202  --End  
+                   #No.FUN-740202  --End
                END FOR
             END IF
             IF l_sum > g_nno.nno08 OR l_sum1 > g_nno.nno08 THEN  #No.FUN-740202
@@ -1461,15 +1468,15 @@ DEFINE
             #MOD-590274 add--end
        #-MOD-B30108-add-
         ELSE
-            IF g_nno.nno06 <> g_nnp[l_ac].nnp07 THEN 
+            IF g_nno.nno06 <> g_nnp[l_ac].nnp07 THEN
                CALL cl_err('','anm-067',1)
-               LET g_nnp[l_ac].nnp08 = g_nnp_t.nnp08 
+               LET g_nnp[l_ac].nnp08 = g_nnp_t.nnp08
                DISPLAY BY NAME g_nnp[l_ac].nnp08
                NEXT FIELD nnp08
             END IF
        #-MOD-B30108-end-
         END IF
- 
+
       AFTER FIELD nnp09   #授信額度
          IF NOT cl_null(g_nnp[l_ac].nnp09) THEN
             IF g_nnp[l_ac].nnp09 <0 THEN
@@ -1492,14 +1499,14 @@ DEFINE
                        IF cl_null(g_nnp[l_cnt].nnp09) OR cl_null(g_nnp[l_cnt].nnp08) THEN
                           CONTINUE FOR
                        END IF
-                       #No.TQC-970153  --End  
+                       #No.TQC-970153  --End
                        #No.FUN-740202  --Begin
                        IF g_nnp[l_cnt].nnp04 = 'Y' THEN
                           LET l_sum = l_sum + (g_nnp[l_cnt].nnp09*g_nnp[l_cnt].nnp08)
                        ELSE
                           LET l_sum1= l_sum1+ (g_nnp[l_cnt].nnp09*g_nnp[l_cnt].nnp08)
                        END IF
-                       #No.FUN-740202  --End  
+                       #No.FUN-740202  --End
                    END FOR
                 ELSE
                    FOR l_cnt = 1 TO g_rec_b
@@ -1507,14 +1514,14 @@ DEFINE
                        IF cl_null(g_nnp[l_cnt].nnp09) OR cl_null(g_nnp[l_cnt].nnp08) THEN
                           CONTINUE FOR
                        END IF
-                       #No.TQC-970153  --End  
+                       #No.TQC-970153  --End
                        #No.FUN-740202  --Begin
                        IF g_nnp[l_cnt].nnp04 = 'Y' THEN
                           LET l_sum = l_sum + (g_nnp[l_cnt].nnp09*g_nnp[l_cnt].nnp08)
                        ELSE
                           LET l_sum1= l_sum1+ (g_nnp[l_cnt].nnp09*g_nnp[l_cnt].nnp08)
                        END IF
-                       #No.FUN-740202  --End  
+                       #No.FUN-740202  --End
                    END FOR
                 END IF
                 IF l_sum > g_nno.nno08 OR l_sum1 > g_nno.nno08 THEN  #No.FUN-740202
@@ -1523,12 +1530,12 @@ DEFINE
                 END IF
                 #MOD-590274 add--end
             END IF
- 
- 
+
+
              LET g_nnp[l_ac].nnp09 = cl_digcut(g_nnp[l_ac].nnp09,t_azi04)   #MOD-530816
              DISPLAY BY NAME g_nnp[l_ac].nnp09   #MOD-530816
          END IF
-     
+
       #No.FUN-850038 --start--
       AFTER FIELD nnpud01
          IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
@@ -1561,7 +1568,7 @@ DEFINE
       AFTER FIELD nnpud15
          IF NOT cl_validate() THEN NEXT FIELD CURRENT END IF
       #No.FUN-850038 ---end---
- 
+
       BEFORE DELETE       #是否取消單身
  #MOD-530816
          SELECT COUNT(alafirm) INTO l_count FROM ala_file
@@ -1594,7 +1601,7 @@ DEFINE
             LET g_rec_b=g_rec_b-1
             DISPLAY g_rec_b TO FORMONLY.cn2
          END IF
- 
+
       ON ROW CHANGE
          IF INT_FLAG THEN
             CALL cl_err('',9001,0)
@@ -1604,8 +1611,8 @@ DEFINE
             ROLLBACK WORK
             EXIT INPUT
          END IF
-         
- 
+
+
          IF l_lock_sw = 'Y' THEN
             CALL cl_err(g_nnp[l_ac].nnp02,-263,1)
             LET g_nnp[l_ac].* = g_nnp_t.*
@@ -1661,7 +1668,7 @@ DEFINE
                   LET g_action_choice = "detail"
                   LET l_ac = l_ac_t
                END IF
-            #FUN-D30032--add--end-- 
+            #FUN-D30032--add--end--
             END IF
             CLOSE i711_bcl
             ROLLBACK WORK
@@ -1671,18 +1678,18 @@ DEFINE
         #LET g_nnp_t.* = g_nnp[l_ac].*
          CLOSE i711_bcl
          COMMIT WORK
- 
+
 #     ON ACTION CONTROLN
 #        CALL i711_b_askkey()
 #        EXIT INPUT
- 
+
       ON ACTION CONTROLO                        #沿用所有欄位
          IF INFIELD(nnp02) AND l_ac > 1 THEN
             LET g_nnp[l_ac].* = g_nnp[l_ac-1].*
             LET g_nnp[l_ac].nnp02 = NULL
             NEXT FIELD nnp02
          END IF
- 
+
       ON ACTION controlp
          CASE
             WHEN INFIELD(nnp03)  #查詢授信類別
@@ -1711,34 +1718,34 @@ DEFINE
                 DISPLAY g_nnp[l_ac].nnp07 TO nnp07            #No.MOD-490344
                NEXT FIELD nnp07
          END CASE
- 
+
       ON ACTION CONTROLR
          CALL cl_show_req_fields()
- 
+
       ON ACTION CONTROLG
          CALL cl_cmdask()
- 
+
       ON ACTION CONTROLF
          CALL cl_set_focus_form(ui.Interface.getRootNode()) RETURNING g_fld_name,g_frm_name #Add on 040913
          CALL cl_fldhelp(g_frm_name,g_fld_name,g_lang) #Add on 040913
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE INPUT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
-#No.FUN-6B0030------Begin--------------                                                                                             
-     ON ACTION controls                                                                                                             
-         CALL cl_set_head_visible("","AUTO")                                                                                        
-#No.FUN-6B0030-----End------------------   
- 
+
+#No.FUN-6B0030------Begin--------------
+     ON ACTION controls
+         CALL cl_set_head_visible("","AUTO")
+#No.FUN-6B0030-----End------------------
+
    END INPUT
- 
+
   #start FUN-5A0029
    LET g_nno.nnomodu = g_user
    LET g_nno.nnodate = g_today
@@ -1746,15 +1753,15 @@ DEFINE
     WHERE nno01 = g_nno.nno01
    DISPLAY BY NAME g_nno.nnomodu,g_nno.nnodate
   #end FUN-5A0029
- 
+
    CLOSE i711_bcl
    COMMIT WORK
- 
+
 #  CALL i711_delall()        #CHI-C30002 mark
    CALL i711_delHeader()     #CHI-C30002 add
- 
+
 END FUNCTION
- 
+
 #CHI-C30002 -------- add -------- begin
 FUNCTION i711_delHeader()
    IF g_rec_b = 0 THEN
@@ -1784,10 +1791,10 @@ END FUNCTION
 #
 #END FUNCTION
 #CHI-C30002 -------- mark -------- end
- 
+
 FUNCTION i711_b_askkey()
 DEFINE l_wc2  LIKE type_file.chr1000#No.FUN-680107 VARCHAR(200)
- 
+
     CONSTRUCT l_wc2 ON nnp02,nnp03,nnn02,nnp04,nnp05,nnp06,nnp07,nnp08,nnp09
                   FROM s_nnp[1].nnp02,s_nnp[1].nnp03,s_nnp[1].nnn02,
                        s_nnp[1].nnp04,s_nnp[1].nnp05,s_nnp[1].nnp06,
@@ -1799,17 +1806,17 @@ DEFINE l_wc2  LIKE type_file.chr1000#No.FUN-680107 VARCHAR(200)
        ON IDLE g_idle_seconds
           CALL cl_on_idle()
           CONTINUE CONSTRUCT
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION help          #MOD-4C0121
          CALL cl_show_help()  #MOD-4C0121
- 
+
       ON ACTION controlg      #MOD-4C0121
          CALL cl_cmdask()     #MOD-4C0121
- 
- 
+
+
 		#No.FUN-580031 --start--     HCN
                  ON ACTION qbe_select
          	   CALL cl_qbe_select()
@@ -1817,36 +1824,36 @@ DEFINE l_wc2  LIKE type_file.chr1000#No.FUN-680107 VARCHAR(200)
 		   CALL cl_qbe_save()
 		#No.FUN-580031 --end--       HCN
     END CONSTRUCT
- 
+
     IF INT_FLAG THEN
        LET INT_FLAG = 0
        RETURN
     END IF
- 
+
     CALL i711_b_fill(l_wc2)
- 
+
 END FUNCTION
- 
+
 FUNCTION i711_b_fill(p_wc2)              #BODY FILL UP
 DEFINE p_wc2  LIKE type_file.chr1000     #No.FUN-680107 VARCHAR(200)
- 
+
    LET g_sql = "SELECT nnp02,nnp03,nnn02,nnp04,nnp05,nnp06,nnp07,nnp08,nnp09 ",
                #No.FUN-850038 --start--
                "       ,nnpud01,nnpud02,nnpud03,nnpud04,nnpud05,",
                "       nnpud06,nnpud07,nnpud08,nnpud09,nnpud10,",
-               "       nnpud11,nnpud12,nnpud13,nnpud14,nnpud15", 
+               "       nnpud11,nnpud12,nnpud13,nnpud14,nnpud15",
                #No.FUN-850038 ---end---
                " FROM nnp_file LEFT OUTER JOIN nnn_file",
                " ON nnp03 = nnn_file.nnn01 WHERE ",
                "   nnp01 ='",g_nno.nno01,"'",  #單頭
                "   AND ",p_wc2 CLIPPED,            #單身
                " ORDER BY 1"
- 
+
    PREPARE i711_pb FROM g_sql
    DECLARE nnp_curs CURSOR FOR i711_pb
- 
+
    CALL g_nnp.clear()
- 
+
    LET g_cnt = 1
    LET g_rec_b = 0
    FOREACH nnp_curs INTO g_nnp[g_cnt].*   #單身 ARRAY 填充
@@ -1854,43 +1861,43 @@ DEFINE p_wc2  LIKE type_file.chr1000     #No.FUN-680107 VARCHAR(200)
          CALL cl_err('foreach:',STATUS,1)
          EXIT FOREACH
       END IF
- 
+
       IF g_nnp[g_cnt].nnp04='Y' THEN
          LET c_nnp04='N'
       END IF
- 
+
       LET g_cnt = g_cnt + 1
- 
+
       IF g_cnt > g_max_rec THEN
          CALL cl_err( '', 9035, 0 )
          EXIT FOREACH
       END IF
    END FOREACH
- 
+
       CALL g_nnp.deleteElement(g_cnt)   #取消 Array Element
- 
+
    LET g_rec_b=g_cnt - 1
    DISPLAY g_rec_b TO FORMONLY.cn2
    LET g_cnt = 0
- 
+
 END FUNCTION
- 
+
 FUNCTION i711_bp(p_ud)
    DEFINE   p_ud   LIKE type_file.chr1          #No.FUN-680107 VARCHAR(1)
- 
- 
+
+
    IF p_ud <> "G" OR g_action_choice = "detail" THEN
       RETURN
    END IF
- 
+
    LET g_action_choice = " "
- 
+
    CALL cl_set_act_visible("accept,cancel", FALSE)
    DISPLAY ARRAY g_nnp TO s_nnp.* ATTRIBUTE(COUNT=g_rec_b,UNBUFFERED)
- 
+
       BEFORE DISPLAY
          CALL cl_navigator_setting( g_curs_index, g_row_count )
- 
+
       BEFORE ROW
          LET l_ac = ARR_CURR()
       CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
@@ -1916,8 +1923,8 @@ FUNCTION i711_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
            ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION previous
          CALL i711_fetch('P')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -1925,8 +1932,8 @@ FUNCTION i711_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION jump
          CALL i711_fetch('/')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -1934,8 +1941,8 @@ FUNCTION i711_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION next
          CALL i711_fetch('N')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -1943,8 +1950,8 @@ FUNCTION i711_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION last
          CALL i711_fetch('L')
          CALL cl_navigator_setting(g_curs_index, g_row_count)   ###add in 040517
@@ -1952,8 +1959,8 @@ FUNCTION i711_bp(p_ud)
          CALL fgl_set_arr_curr(1)  ######add in 040505
            END IF
 	ACCEPT DISPLAY                   #No.FUN-530067 HCN TEST
- 
- 
+
+
       ON ACTION detail
          LET g_action_choice="detail"
          LET l_ac = 1
@@ -1964,15 +1971,15 @@ FUNCTION i711_bp(p_ud)
       ON ACTION help
          LET g_action_choice="help"
          EXIT DISPLAY
- 
+
       ON ACTION locale
          CALL cl_dynamic_locale()
           CALL cl_show_fld_cont()                   #No.FUN-550037 hmf
- 
+
       ON ACTION exit
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       ##########################################################################
       # Special 4ad ACTION
       ##########################################################################
@@ -1983,68 +1990,68 @@ FUNCTION i711_bp(p_ud)
       ON ACTION memo
          LET g_action_choice="memo"
          EXIT DISPLAY
- 
+
       ON ACTION accept
          LET g_action_choice="detail"
          LET l_ac = ARR_CURR()
          EXIT DISPLAY
- 
+
       ON ACTION cancel
              LET INT_FLAG=FALSE 		#MOD-570244	mars
          LET g_action_choice="exit"
          EXIT DISPLAY
- 
+
       ON IDLE g_idle_seconds
          CALL cl_on_idle()
          CONTINUE DISPLAY
- 
+
       ON ACTION about         #MOD-4C0121
          CALL cl_about()      #MOD-4C0121
- 
+
       ON ACTION exporttoexcel       #FUN-4B0008
          LET g_action_choice = 'exporttoexcel'
          EXIT DISPLAY  #TQC-5B0076
- 
+
       # No.FUN-530067 --start--
       AFTER DISPLAY
          CONTINUE DISPLAY
       # No.FUN-530067 ---end---
- 
-#No.FUN-6B0030------Begin--------------                                                                                             
-     ON ACTION controls                                                                                                             
-         CALL cl_set_head_visible("","AUTO")                                                                                        
-#No.FUN-6B0030-----End------------------   
- 
+
+#No.FUN-6B0030------Begin--------------
+     ON ACTION controls
+         CALL cl_set_head_visible("","AUTO")
+#No.FUN-6B0030-----End------------------
+
       ON ACTION related_document                #No.FUN-6A0011  相關文件
-         LET g_action_choice="related_document"          
+         LET g_action_choice="related_document"
          EXIT DISPLAY
- 
+
       #No.FUN-7C0050 add
       &include "qry_string.4gl"
    END DISPLAY
    CALL cl_set_act_visible("accept,cancel", TRUE)
 END FUNCTION
- 
- 
+
+
 FUNCTION i711_set_entry(p_cmd)
   DEFINE p_cmd   LIKE type_file.chr1          #No.FUN-680107 VARCHAR(1)
- 
+
    IF p_cmd = 'a' AND ( NOT g_before_input_done ) THEN
       CALL cl_set_comp_entry("nno01",TRUE)
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION i711_set_no_entry(p_cmd)
   DEFINE p_cmd   LIKE type_file.chr1          #No.FUN-680107 VARCHAR(1)
- 
+
    IF p_cmd = 'u' AND g_chkey = 'N' AND ( NOT g_before_input_done ) THEN
       CALL cl_set_comp_entry("nno01",FALSE)
 display "cl_set_comp_entry('nno01',FALSE) runed"
    END IF
- 
+
 END FUNCTION
- 
+
 FUNCTION i711_out()
   DEFINE
     sr              RECORD
@@ -2071,14 +2078,14 @@ FUNCTION i711_out()
                     END RECORD,
     l_za05          LIKE type_file.chr1000,#No.FUN-680107 VARCHAR(40)
     l_name          LIKE type_file.chr20   #External(Disk) file name #No.FUN-680107 VARCHAR(20)
- 
- 
+
+
     IF g_nno.nno01 IS NULL OR g_wc IS NULL THEN
        CALL cl_err('','arm-019',0) RETURN
     END IF
     #No.FUN-780011  --Begin
     SELECT zz05 INTO g_zz05 FROM zz_file WHERE zz01 = g_prog
-    #No.FUN-780011  --End  
+    #No.FUN-780011  --End
     CALL cl_wait()
     #No.FUN-770038  --Begin
     #LET l_name = 'anmi711.out'
@@ -2096,9 +2103,9 @@ FUNCTION i711_out()
               "  WHERE ",g_wc CLIPPED," AND ",g_wc2 CLIPPED," ORDER BY nno01,nnp02 "
     #PREPARE i711_p1 FROM g_sql                # RUNTIME 編譯
     #DECLARE i711_co CURSOR FOR i711_p1
- 
+
     #START REPORT i711_rep TO l_name
- 
+
     #FOREACH i711_co INTO sr.*
     #    IF STATUS THEN CALL cl_err('foreach:',STATUS,1) EXIT FOREACH END IF
     #    OUTPUT TO REPORT i711_rep(sr.*)
@@ -2111,11 +2118,11 @@ FUNCTION i711_out()
        CALL cl_wcchp(g_wc,'nno01')
             RETURNING g_str
     END IF
- 
+
     CALL cl_prt_cs1('anmi711','anmi711',g_sql,g_str)
-    #No.FUN-770038  --End  
+    #No.FUN-770038  --End
 END FUNCTION
- 
+
 #No.FUN-770038  --Begin
 #REPORT i711_rep(sr)
 # DEFINE
@@ -2173,7 +2180,7 @@ END FUNCTION
 #     PRINT g_head1
 #     LET g_head1=g_x[17] CLIPPED,COLUMN g_c[32],sr.nno13
 #     PRINT g_head1
-# 
+#
 #     PRINT g_dash[1,g_len]
 #     PRINT g_x[31] CLIPPED,g_x[32] CLIPPED,g_x[33] CLIPPED,g_x[34] CLIPPED,
 #           g_x[35] CLIPPED,g_x[36] CLIPPED,g_x[37] CLIPPED,g_x[38] CLIPPED
@@ -2210,6 +2217,5 @@ END FUNCTION
 #            SKIP 2 LINE
 #        END IF
 #END REPORT
-#No.FUN-770038  --End  
+#No.FUN-770038  --End
 #Patch....NO.MOD-5A0095 <003,001,002> #
-

@@ -8,17 +8,7 @@ database ds
 
 globals "../../../tiptop/config/top.global"
 
-type cgb record
-    cgb02_1     like cgb_file.cgb02,
-    cgb03_1     like cgb_file.cgb03,
-    cgb04_1     like cgb_file.cgb04,
-    cgb05_1     like cgb_file.cgb05,
-    cgb06_1     like cgb_file.cgb06,
-    cgb07_1     like cgb_file.cgb07,
-    cgb08_1     like cgb_file.cgb08,
-    cgb09_1     like cgb_file.cgb09,
-    cgb10_1     like cgb_file.cgb10
-    end record
+type cgb record like cgb_file.*
 type cgc record
     cgc02     like cgc_file.cgc02,
     cgc03     like cgc_file.cgc03,
@@ -30,17 +20,21 @@ type cgc record
     cgc09     like cgc_file.cgc09,
     cgc10     like cgc_file.cgc10,
     cgc11     like cgc_file.cgc11,
-    cgc12     like cgc_file.cgc12
+    cgc12     like cgc_file.cgc12,
+    cgc13     like cgc_file.cgc13,
+    cgc14     like cgc_file.cgc14,
+    cgc15     like cgc_file.cgc15
     end record
 
 define g_cgb_1  dynamic array of cgb
 define g_cgc dynamic array of cgc
+define g_cgc_t cgc
 define g_cgb record like cgb_file.*
 define g_cgb_t record like cgb_file.*
 define g_cgb01_t    like cgb_file.cgb01
 define g_cgb02_t    like cgb_file.cgb02
-define g_cnt,g_curs_index,g_row_count,g_jump,l_ac integer
-define g_sql,g_msg,g_wc,g_cmd string
+define g_cnt,g_curs_index,g_row_count,g_jump,l_ac,g_rec_b,l_ac_t integer
+define g_sql,g_msg,g_wc,g_cmd,g_forupd_sql string
 define g_no_ask like type_file.chr1
 
 MAIN
@@ -61,7 +55,7 @@ MAIN
     
     call cl_used(g_prog,g_time,1) returning g_time
 
-    let g_sql = "select * from cgb_file where cgb01=? and cgb02=? for update"
+    let g_sql = "select * from cgb_file where cgb01=? for update"
     declare cgoi100_curl cursor from g_sql
 
     open window cgoi100_w at p_row,p_col with form "cgo/42f/cgoi100"
@@ -77,9 +71,8 @@ END MAIN
 
 function cgoi100_curs()
     clear form
-    display "$GO为go编译命令；$GCC为gcc编译命令；$WS为代码工作目录；$OUT为输出二进制文件目录；$THIS为当前lib名称" to tips
-    construct by name g_wc on cgb01,cgb02,cgb03,cgb04,cgb05,
-                              cgb06,cgb07,cgb08,cgb09,cgb10
+    -- display "$GO为go编译命令；$GCC为gcc编译命令；$WS为代码工作目录；$OUT为输出二进制文件目录；$THIS为当前lib名称" to tips
+    construct by name g_wc on cgb01,cgb02,cgb03,cgb04,cgb05,cgb06
         on action controlp 
             case 
                 when infield(cgb01)
@@ -100,13 +93,13 @@ function cgoi100_curs()
         on action help 
             call cl_show_help()
     end construct
-    let g_sql = "select unique cgb01,cgb02 from cgb_file ",
-                " where ",g_wc clipped," order by cgb01,cgb02"
+    let g_sql = "select unique cgb01 from cgb_file ",
+                " where ",g_wc clipped," order by cgb01"
     prepare cgoi100_prepare from g_sql
     declare cgoi100_curs 
         scroll cursor with hold for cgoi100_prepare
     
-    let g_sql = "select count(*) from (select unique cgb01,cgb02 from cgb_file",
+    let g_sql = "select count(*) from (select unique cgb01 from cgb_file",
                 " where ",g_wc clipped," )"
     prepare cgoi100_precount from g_sql
     declare cgoi100_count cursor for cgoi100_precount
@@ -116,7 +109,7 @@ end function
 # 菜单
 function cgoi100_menu()
     while true
-        display "$GO为go编译命令；$GCC为gcc编译命令；$WS为代码工作目录；$OUT为输出二进制文件目录；$THIS为当前lib名称" to tips
+        -- display "$GO为go编译命令；$GCC为gcc编译命令；$WS为代码工作目录；$OUT为输出二进制文件目录；$THIS为当前lib名称" to tips
         call cgoi100_bp("G")
         case g_action_choice
             when "help"
@@ -146,10 +139,6 @@ function cgoi100_menu()
                 if cl_chk_act_auth() then
                     call cgoi100_u()
                 end if
-            when "version_add"
-                if cl_chk_act_auth() then
-                    call cgoi100_u()
-                end if
             when "compile"
                 if cl_chk_act_auth() then
                     call cgoi100_compile()
@@ -157,6 +146,10 @@ function cgoi100_menu()
             when "test"
                 if cl_chk_act_auth() then
                     call cgoi100_test()
+                end if
+            when "detail"
+                if cl_chk_act_auth() then
+                    call cgoi100_b()
                 end if
         end case
     end while
@@ -168,10 +161,9 @@ function cgoi100_a()
     clear form
     initialize g_cgb.* like cgb_file.*
 
-    let g_cgb.cgb02 = 1
-    let g_cgb.cgb03 = 1
-    let g_cgb.cgb07 = g_user 
-    let g_cgb.cgb08 = current year to second
+    let g_cgb.cgb02 = g_today 
+    let g_cgb.cgb04 = g_today 
+    let g_cgb.cgb06 = '1'
 
     while true 
         call cgoi100_i('a')
@@ -190,8 +182,8 @@ function cgoi100_a()
             continue while
         else
             let g_cgb_t.* = g_cgb.*
-            select cgb01,cgb02 into g_cgb.cgb01,g_cgb.cgb02 from cgb_file
-             where cgb01 = g_cgb.cgb01 and cgb02 = g_cgb.cgb02
+            select cgb01 into g_cgb.cgb01,g_cgb.cgb02 from cgb_file
+             where cgb01 = g_cgb.cgb01 
         end if
         exit while
     end while
@@ -202,11 +194,6 @@ end function
 function cgoi100_i(p_cmd)
     define p_cmd like type_file.chr1
     define l_cnt like type_file.num5
-
-    if g_action_choice = "version_add" then
-        let g_cgb.cgb02 = sfmt("%1",g_cgb.cgb02 + 1) using '<<<<<'
-        let g_cgb.cgb05 = g_cgb02_t
-    end if
 
     input by name g_cgb.* without defaults
 
@@ -219,7 +206,7 @@ function cgoi100_i(p_cmd)
                 if p_cmd = 'a' or (p_cmd = 'u' and g_cgb.cgb01!=g_cgb01_t) then
                     # 重复检查
                     select count(*) into l_cnt from cgb_file
-                     where cgb01 = g_cgb.cgb01 and cgb02 = g_cgb.cgb02
+                     where cgb01 = g_cgb.cgb01
                     if l_cnt > 0 then
                         call cl_err(g_cgb.cgb01,-239,0)
                         let g_cgb.cgb01 = g_cgb01_t
@@ -253,7 +240,6 @@ end function
 function cgoi100_q()
     let g_row_count = 0
     let g_cgb.cgb01 = ""
-    let g_cgb.cgb02 = ""
 
     call cl_navigator_setting(g_curs_index, g_row_count)
     message ""
@@ -284,42 +270,41 @@ function cgoi100_fetch(p_flag)
     define l_abso like type_file.num10
 
     case    p_flag
-        when 'N' fetch next cgoi100_curs into g_cgb.cgb01,g_cgb.cgb02
-        when 'P' fetch previous cgoi100_curs into g_cgb.cgb01,g_cgb.cgb02
-        when 'F' fetch first cgoi100_curs into g_cgb.cgb01,g_cgb.cgb02
-        when 'L' fetch last cgoi100_curs into g_cgb.cgb01,g_cgb.cgb02
+        when 'N' fetch next cgoi100_curs into g_cgb.cgb01
+        when 'P' fetch previous cgoi100_curs into g_cgb.cgb01
+        when 'F' fetch first cgoi100_curs into g_cgb.cgb01
+        when 'L' fetch last cgoi100_curs into g_cgb.cgb01
         when '/'
             if not g_no_ask then
                 call cl_getmsg('fetch',g_lang) returning g_msg
-                let int_flag = 0  ######add for prompt bug
+                let int_flag = 0
     
                 prompt g_msg clipped,': ' for g_jump
                     on idle g_idle_seconds
                         call cl_on_idle()
     
-                    on action about         #mod-4c0121
-                        call cl_about()      #mod-4c0121
+                    on action about
+                        call cl_about()
     
-                    on action help          #mod-4c0121
-                        call cl_show_help()  #mod-4c0121
+                    on action help
+                        call cl_show_help()
     
-                    on action controlg      #mod-4c0121
-                        call cl_cmdask()     #mod-4c0121
+                    on action controlg
+                        call cl_cmdask()
     
                 end prompt
                 if int_flag then
                     let int_flag = 0
-                    let g_jump = g_curs_index     #no.fun-5c0121
+                    let g_jump = g_curs_index
                     exit case
                 end if
             end if
-            fetch absolute g_jump cgoi100_curs into g_cgb.cgb01,g_cgb.cgb02
+            fetch absolute g_jump cgoi100_curs into g_cgb.cgb01
             let g_no_ask = false
     end case
     if sqlca.sqlcode then
         initialize g_cgb.* to null
         let g_cgb.cgb01 = null
-        let g_cgb.cgb02 = null
         call cl_err(g_cgb.cgb01,sqlca.sqlcode,0)
         return
     else
@@ -333,7 +318,7 @@ function cgoi100_fetch(p_flag)
         call cl_navigator_setting(g_curs_index, g_row_count)
     end if
     select * into g_cgb.* from cgb_file
-     where cgb01 = g_cgb.cgb01 and cgb02 = g_cgb.cgb02
+     where cgb01 = g_cgb.cgb01
 
     if sqlca.sqlcode then
         call cl_err3("sel","cgb_file",g_cgb.cgb01,"",SQLCA.sqlcode,"","",0)
@@ -348,46 +333,23 @@ function cgoi100_show()
 
     let g_cgb_t.* = g_cgb.*
 
-    display by name g_cgb.*
-
-    # 显示编译成功函数笔数
-    # TODO
-    let l_cnt = 0
-    select count(*) into l_cnt from cgc_file
-     where cgc01 = g_cgb.cgb01 and cgc02 = g_cgb.cgb02
-       and cgc06 = '2'
-    display sfmt("测试成功：%1",l_cnt) to Pass
-
-    let l_cnt = 0
-    select count(*) into l_cnt from cgc_file
-     where cgc01 = g_cgb.cgb01 and cgc02 = g_cgb.cgb02
-       and cgc06 = '3'
-    display sfmt("测试失败：%1",l_cnt) to UnPass
-
-    let l_cnt = 0
-    select count(*) into l_cnt from cgc_file
-     where cgc01 = g_cgb.cgb01 and cgc02 = g_cgb.cgb02
-       and cgc06 = '1'
-    display sfmt("未测试：%1",l_cnt) to UnTest
-
-    call cgoi100_b_fill()
-
+    display by name g_cgb.*  
+    call cgoi100_b_fill() 
 end function
 function cgoi100_u()
     define l_cgc10  like cgc_file.cgc10
 
 
-    if g_cgb.cgb01 is null or g_cgb.cgb02 is null then
+    if g_cgb.cgb01 is null then
         call cl_err('',-400,0)
         return
     end if
 
     message ''
     let g_cgb01_t = g_cgb.cgb01
-    let g_cgb02_t = g_cgb.cgb02
 
     begin work
-    open cgoi100_curl using g_cgb.cgb01,g_cgb.cgb02
+    open cgoi100_curl using g_cgb.cgb01
     if sqlca.sqlcode then
         call cl_err('open cgb_file',sqlca.sqlcode,1)
         return
@@ -400,7 +362,6 @@ function cgoi100_u()
     end if
 
     let g_cgb01_t = g_cgb.cgb01
-    let g_cgb02_t = g_cgb.cgb02
 
     call cgoi100_show()
 
@@ -411,29 +372,9 @@ function cgoi100_u()
             call cl_err('',9001,0)
             exit while
         end if
-    
-        # 进版
-        if g_action_choice = 'version_add' then
-            # 压缩当前版本
-            if not cgoi100_zip(g_cgb.cgb01,g_cgb02_t) then
-                call cl_err('压缩文件失败','!',1)
-                rollback work
-                close cgoi100_curl
-                return
-            end if
-            # 复制cgc_file 资料 
-            delete from x
-            insert into x select * from cgc_file where cgc01 = g_cgb01_t and cgc02 = g_cgb02_t
-            let l_cgc10 = current year  to second
-            update x set cgc02 = g_cgb.cgb02,cgc06 ='1',
-                         cgc07 = g_user ,cgc08 = l_cgc10,
-                         cgc09 = '',cgc10 = ''
-            insert into cgc_file select * from x
-
-        end if
 
         update cgb_file set cgb_file.* = g_cgb.*
-        where cgb01 = g_cgb.cgb01 and cgb02 = g_cgb02_t
+        where cgb01 = g_cgb.cgb01 
         
         if sqlca.sqlcode then
             call cl_err3("upd","cgb_file",g_cgb01_t,"",sqlca.sqlcode,"","",1)
@@ -450,14 +391,14 @@ function cgoi100_u()
 end function
 function cgoi100_r()
 
-    if g_cgb.cgb01 is null or g_cgb.cgb02 is null then
+    if g_cgb.cgb01 is null then
         call cl_err('',-400,0)
         return
     end if
 
     begin work
 
-    open cgoi100_curl using g_cgb.cgb01,g_cgb.cgb02
+    open cgoi100_curl using g_cgb.cgb01
     fetch cgoi100_curl into g_cgb.*
     if sqlca.sqlcode then
         call cl_err(g_cgb.cgb01,sqlca.sqlcode,0)
@@ -469,39 +410,12 @@ function cgoi100_r()
     if cl_delete() then
         delete from cgb_file
          where cgb01 = g_cgb.cgb01
-           and cgb02 = g_cgb.cgb02
         if sqlca.sqlcode then
             call cl_err3("del","cgb_file",g_cgb.cgb01||g_cgb.cgb02,"",sqlca.sqlcode,"","del zz",0)   #no.fun-660081
             rollback work
         end if
 
-        delete from cgc_file
-         where cgc01 = g_cgb.cgb01
-           and cgc02 = g_cgb.cgb02
-        
-        #备份文件
-        if not cgoi100_zip(g_cgb.cgb01,g_cgb.cgb02) then
-            if not cl_confirm("cgo-005") then
-                rollback work
-                return
-            end if
-        end if
-        
-        # 是否继续删除文件
-        if cl_confirm('cgo-002') then
-            if not cgoi100_del_code(g_cgb.cgb01) then
-                if not cl_confirm('cgo-003') then
-                    rollback work
-                    return
-                end if
-            end if
-            if not cgoi100_del(g_cgb.cgb01) then
-                if not cl_confirm('cgo-004') then
-                    rollback work
-                    return
-                end if
-            end if
-        end if
+        delete from cgc_file where cgc01 = g_cgb.cgb01 
         
         clear form
         initialize g_cgb.* to null
@@ -539,23 +453,9 @@ function cgoi100_r()
 end function
 function cgoi100_b_fill()
 
-    declare b_fill_cur1 cursor for
-        select cgb02,cgb03,cgb04,cgb05,cgb06,cgb07,cgb08,cgb09,cgb10
-          from cgb_file where cgb01 = g_cgb.cgb01
-    let g_cnt = 1
-    call g_cgb_1.clear()
-    foreach b_fill_cur1 into g_cgb_1[g_cnt].*
-        if sqlca.sqlcode then
-            call cl_err("b_fill_cur1",sqlca.sqlcode,1)
-            exit foreach
-        end if
-        let g_cnt = g_cnt + 1
-    end foreach
-    call g_cgb_1.deleteElement(g_cnt)
-
     declare b_fill_cur2 cursor for
-        select cgc02,cgc03,cgc04,cgc05,cgc06,cgc07,cgc08,cgc09,cgc10,cgc11,cgc12
-          from cgc_file where cgc01 = g_cgb.cgb01 and cgc02 = g_cgb.cgb02
+        select cgc02,cgc03,cgc04,cgc05,cgc06,cgc07,cgc08,cgc09,cgc10,cgc11,cgc12,cgc13,cgc14,cgc15
+          from cgc_file where cgc01 = g_cgb.cgb01
     let g_cnt = 1
     call g_cgc.clear()
     foreach b_fill_cur2 into g_cgc[g_cnt].*
@@ -581,24 +481,19 @@ function cgoi100_bp(p_ud)
     call cl_set_act_visible("accept,cancel", false)
 
     dialog
-        display array g_cgb_1 to s_cgb.* attribute(count=g_cgb_1.getLength())
-
-            before display
-                let l_ac = arr_curr()
-
-            on action accept
-                display 'g_cgb_1'||l_ac
-        end display
         display array g_cgc to s_cgc.* attribute(count=g_cgc.getLength())
 
             before display
                 let l_ac = arr_curr()
             
             on action accept
-                display 'g_cgc'||l_ac
-                let g_cmd = "cgoi120 "
-                let g_cmd = g_cmd , " \" cgc01='",g_cgb.cgb01,"' and cgc02='",g_cgb.cgb02,"'\""
-                call cl_cmdrun_wait(g_cmd)
+                let g_action_choice="detail"
+                exit dialog
+
+            on action detail
+                let g_action_choice="detail"
+                let l_ac = 1
+                exit dialog
         end display
 
         before dialog
@@ -675,11 +570,6 @@ function cgoi100_bp(p_ud)
             call cl_on_idle()
             continue dialog
         
-        # 进版本
-        on action version_add
-            let g_action_choice="version_add"
-            exit dialog
-        
         on action compile
             let g_action_choice="compile"
             exit dialog
@@ -705,7 +595,7 @@ function cgoi100_set_entry(p_cmd)
     if p_cmd = 'u' then
         call cl_set_comp_entry("cgb01",false)
     end if 
-    display "$GO为go编译命令；$GCC为gcc编译命令；$WS为代码工作目录；$OUT为输出二进制文件目录；$THIS为当前lib名称" to tips
+    --display "$GO为go编译命令；$GCC为gcc编译命令；$WS为代码工作目录；$OUT为输出二进制文件目录；$THIS为当前lib名称" to tips
 end function
 
 function cgoi100_set_no_entry(p_cmd)
@@ -721,6 +611,9 @@ function cgoi100_compile()
     define l_tok base.StringTokenizer 
     define l_cmd,l_str string
     define result,l_cnt,l_idx integer
+    define l_cga record like cga_file.*
+    define l_ch     base.Channel
+    define l_ex     varchar(2000)
 
     whenever error continue
 
@@ -730,58 +623,138 @@ function cgoi100_compile()
     end if
 
     # 先更新为失败状态
-    let g_cgb.cgb09 = g_user
-    let g_cgb.cgb10 = current year to second
-    update cgb_file set cgb03 = 2,
-        cgb09 = g_cgb.cgb09,cgb10 = g_cgb.cgb10
-     where cgb01 = g_cgb.cgb01 and cgb02 = g_cgb.cgb02
+    update cgb_file set cgb06 = '3',cgb05=g_today where cgb01 = g_cgb.cgb01
     if sqlca.sqlcode then
-        call cl_err("upd cgb03",sqlca.sqlcode,1)
+        call cl_err("upd cgb06",sqlca.sqlcode,1)
         return
-    end if  
+    end if
 
-    # 计算命令总笔数
-    let l_idx = 1
-    let l_cnt = 0
-    let l_cmd = g_cgb.cgb06
-    while l_idx > 0
-        call l_cmd.getIndexOf("\n",l_idx+1) returning l_idx
-        let l_cnt = l_cnt + 1
-    end while
+    select * into l_cga.* from cga_file
+    if sqlca.sqlcode then
+        call cl_err("sel cga",sqlca.sqlcode,0)
+        let g_success = 'N'
+        return
+    end if 
 
-    call cl_progress_bar(l_cnt+1)
+    -- 进度条
+    call cl_progress_bar(5)
+    -- echo "1. go 程序编译..."
+    -- cd $CGO/code/parttrack && golang build -mod=vendor -buildvcs=false -buildmode=c-shared -o $CGO/out/libparttrackgo.so
+    call cl_progressing("1/5 go 程序编译……")
+    let l_cmd = "cd ",l_cga.cga03 clipped ,"/",g_cgb.cgb01 clipped," && "
+    let l_cmd = l_cmd,l_cga.cga01 clipped ," build "
+    if l_cga.cga06 = 'Y' then
+        let l_cmd = l_cmd," -mod=vendor "
+    end if
+    let l_cmd = l_cmd,sfmt("-buildvcs=false -buildmode=c-shared -o %1/lib%2go.so 2>&1",l_cga.cga04,g_cgb.cgb01)
+    display l_cmd
+    let l_ch = base.Channel.create()
+    call l_ch.openPipe(l_cmd,"r")
+    let l_ex = l_ch.readline()
+    if not cl_null(l_ex) then
+        call cl_err(sfmt("命令:%1\n报错信息:%2\n",l_cmd,l_ex),"aic-060",1)
+        goto _exit
+    end if
 
-    # 开始执行编译命令
-    let l_idx = 1
-    let l_tok = base.StringTokenizer.create(g_cgb.cgb06,"\n")
-    while l_tok.hasMoreTokens()
-        let l_cmd = l_tok.nextToken()
-        let l_cmd = cgoi100_replace(l_cmd)
-        call cl_progressing(sfmt("当前%1条命令：%2",l_idx,l_cmd))
-        run l_cmd in line mode returning result
-        let l_idx = l_idx + 1
-        if result / 256 <> 0 then
-            display l_cmd
-            call cl_err(l_cmd,'!',1)
-            return
-        end if
-    end while
-    call cl_progressing("编译完成")
+    -- echo "2. link -s 链接 go.so 到 $FGLDIR/lib..."
+    -- rm -f $FGLDIR/lib/libparttrackgo.so && ln -s /u1/topprod/topcust/cgo/out/libparttrackgo.so $FGLDIR/lib/libparttrackgo.so
+    call cl_progressing("2/5 link -s 链接 go.so 到 $FGLDIR/lib……")
+    let l_ex = ""
+    let l_cmd = sfmt(
+        "rm -f $FGLDIR/lib/lib%1go.so && ln -s %2/lib%3go.so $FGLDIR/lib/lib%4go.so 2>&1",
+        g_cgb.cgb01,
+        l_cga.cga04,
+        g_cgb.cgb01,
+        g_cgb.cgb01)
+    display l_cmd
+    let l_ch = base.Channel.create()
+    call l_ch.openPipe(l_cmd,"r")
+    let l_ex = l_ch.readline()
+    if not cl_null(l_ex) then
+        call cl_err(sfmt("命令:%1\n报错信息:%2\n",l_cmd,l_ex),"aic-060",1)
+        goto _exit
+    end if
 
-    let g_cgb.cgb09 = g_user
-    let g_cgb.cgb10 = current year to second
-    update cgb_file set cgb03 = 3,
-        cgb09 = g_cgb.cgb09,cgb10 = g_cgb.cgb10
-     where cgb01 = g_cgb.cgb01 and cgb02 = g_cgb.cgb02
+    -- echo "3. gcc 编译 c 文件..."
+    -- gcc -c -I$FGLDIR/include -I$CGO/out -fPIC -o $CGO/code/parttrack/bin/parttrack.o $CGO/code/parttrack/bin/export.c
+    call cl_progressing("3/5 gcc 编译 c 文件……")
+    let l_ex = ""
+    let l_cmd = sfmt(
+        "%1 -c -I$FGLDIR/include -I%2 -fPIC -o %3/%4/bin/%5.o %6/%7/bin/export.c  2>&1",
+        l_cga.cga02,
+        l_cga.cga04,
+        l_cga.cga03,
+        g_cgb.cgb01, 
+        g_cgb.cgb01,
+        l_cga.cga03,
+        g_cgb.cgb01)
+    display l_cmd
+    let l_ch = base.Channel.create()
+    call l_ch.openPipe(l_cmd,"r")
+    let l_ex = l_ch.readline()
+    if not cl_null(l_ex) then
+        call cl_err(sfmt("命令:%1\n报错信息:%2\n",l_cmd,l_ex),"aic-060",1)
+        goto _exit
+    end if
+
+    -- echo "4. gcc 链接o文件..."
+    -- gcc -shared -o $CGO/out/libparttrack.so $CGO/code/parttrack/bin/parttrack.o  -L $FGLDIR/lib -lfgl -lparttrackgo
+    call cl_progressing("4/5 gcc 链接o文件……")
+    let l_ex = ""
+    let l_cmd = sfmt(
+        "%1 -shared -o %2/lib%3.so %4/%5/bin/%6.o  -L $FGLDIR/lib -lfgl -l%7go  2>&1",
+        l_cga.cga02,
+        l_cga.cga04,
+        g_cgb.cgb01,
+        l_cga.cga03,
+        g_cgb.cgb01,
+        g_cgb.cgb01,
+        g_cgb.cgb01)
+    display l_cmd
+    let l_ch = base.Channel.create()
+    call l_ch.openPipe(l_cmd,"r")
+    let l_ex = l_ch.readline()
+    if not cl_null(l_ex) then
+        call cl_err(sfmt("命令:%1\n报错信息:%2\n",l_cmd,l_ex),"aic-060",1)
+        goto _exit
+    end if
+
+    -- echo "5. link -s 链接so文件到目的目录..."
+    -- rm -f $CGO/42m/libparttrack.so && ln -s /u1/topprod/topcust/cgo/out/libparttrack.so $CGO/42m/libparttrack.so
+    call cl_progressing("5/5 link -s 链接so文件到目的目录……")
+    let l_ex = ""
+    let l_cmd = sfmt(
+        "rm -f %1/lib%2.so && ln -s %3/lib%4.so %5/lib%6.so  2>&1",
+        l_cga.cga05,
+        g_cgb.cgb01,
+        l_cga.cga04,
+        g_cgb.cgb01,
+        l_cga.cga05,
+        g_cgb.cgb01)
+    display l_cmd
+    let l_ch = base.Channel.create()
+    call l_ch.openPipe(l_cmd,"r")
+    let l_ex = l_ch.readline()
+    if not cl_null(l_ex) then
+        call cl_err(sfmt("命令:%1\n报错信息:%2\n",l_cmd,l_ex),"aic-060",1)
+        goto _exit
+    end if 
+    
+    update cgb_file set cgb06 = '2'
+     where cgb01 = g_cgb.cgb01 
     if sqlca.sqlcode then
         call cl_err("upd cgb03",sqlca.sqlcode,1)
         return
     end if
-    let g_cgb.cgb03 = '3'
+    let g_cgb.cgb05 = g_today
+    let g_cgb.cgb06 = '2'
 
     message "编译成功"
-    display by name g_cgb.cgb03,g_cgb.cgb09,g_cgb.cgb10
+    display by name g_cgb.cgb05,g_cgb.cgb06
     call cgoi100_show()
+    label _exit:
+    call cl_safe_close_progress_bar()
+
 end function
 
 
@@ -803,95 +776,27 @@ function cgoi100_replace(p_str)
     return l_str
 end function
 
-# 压缩当前代码未压缩包
-function cgoi100_zip(p_cgb01,p_cgb02)
-    define p_cgb01  like cgb_file.cgb01
-    define p_cgb02  like cgb_file.cgb02
-    define result   integer
 
-    run cgoi100_replace(
-        sfmt("tar -czvf $BAK/%1 $WS/$THIS",cgoi100_zip_name(p_cgb01,p_cgb02))
-        ) in line mode returning result
-    if result / 256 <> 0 then
-        return false
-    end if
-    return true
-end function
+function cgoi100_test() 
+    define l_cmd    string
 
-# 解压当前代码未压缩包
-function cgoi100_unzip(p_cgb01,p_cgb02)
-    define p_cgb01  like cgb_file.cgb01
-    define p_cgb02  like cgb_file.cgb02
-    define result   integer
-
-    run cgoi100_replace(
-        sfmt("tar -xzvf $BAK/%1 $WS/$THIS",cgoi100_zip_name(p_cgb01,p_cgb02))
-        ) in line mode returning result
-    if result / 256 <> 0 then
-        return false
-    end if
-    return true
-
-end function
-
-# 删除当前代码
-function cgoi100_del_code(p_cgb01)
-    define p_cgb01  like cgb_file.cgb01
-    define result   integer
-
-    run cgoi100_replace("rm -rf $WS/$THIS") in line mode returning result
-
-    return result/256 == 0
-end function
-
-# 删除当前编译文件及文件夹
-function cgoi100_del(p_cgb01)
-    define p_cgb01  like cgb_file.cgb01
-    define result   integer
-
-    run cgoi100_replace("rm -rf $OUT/$THIS") in line mode returning result
-    if result/256 <> 0 then
-        return false
-    end if
-    run cgoi100_replace("rm $CGO/42m/lib$THIS.so")  in line mode returning result
-    return result/256 == 0
-end function
-
-# 压缩包名称
-function cgoi100_zip_name(p_cgb01,p_cgb02)
-    define p_cgb01  like cgb_file.cgb01
-    define p_cgb02  like cgb_file.cgb02
-    
-    return sfmt("%1_v_%2.tar.gz",p_cgb01,p_cgb02)
-end function
-
-
-function cgoi100_test()
-    define l_sql string
-    define l_cgc01  like cgc_file.cgc01
-    define l_cgc04  like cgc_file.cgc04
-
-    if cl_null(g_cgb.cgb01) or cl_null(g_cgb.cgb02) then
+    if cl_null(g_cgb.cgb01)  then
         call cl_err('',-400,0)
         return
     end if
 
-    let l_sql = "select cgc01,cgc04 from cgc_file where cgc01 ='",g_cgb.cgb01,"'",
-                " and cgc02 = '",g_cgb.cgb02,"' "
-    prepare cgoi100_test_p from l_sql
-    declare cgoi100_test_cl cursor for cgoi100_test_p
+    if g_cgc.getLength() == 0 or g_cgc.getLength() < l_ac then
+        call cl_err('',-400,0)
+        return
+    end if
 
-    foreach cgoi100_test_cl into l_cgc01,l_cgc04
-        if sqlca.sqlcode then
-            call cl_err("cgoi100_test_cl",sqlca.sqlcode,1)
-            exit foreach
-        end if
-        if not cgoi100_testing(l_cgc01,l_cgc04) then
-            message l_cgc01||" "||l_cgc04||" 测试失败"
-        end if
-    end foreach
+    let l_cmd = g_cgc[l_ac].cgc07
+    if cl_null(l_cmd) then
+        call cl_err("测试命令为空","!",1)
+        return
+    end if
+    call cl_cmdrun_wait(l_cmd)
 
-    call cgoi100_show()
 end function
 
 # 测试函数
@@ -932,4 +837,191 @@ function cgoi100_testing(p_prog,p_func)
     message "Test OK"
     return true
     
+end function
+
+function cgoi100_b()
+    define p_cmd    varchar(1)
+    define l_n      integer
+
+    define l_allow_insert,l_allow_delete boolean
+
+    let g_action_choice = ""
+    let g_forupd_sql = "select cgc02,cgc03,cgc04,cgc05,cgc06,cgc07,cgc08,cgc09,cgc10,cgc11,cgc12,cgc13,cgc14,cgc15",
+                       "  from cgc_file where cgc01=? for update"
+    let g_forupd_sql = cl_forupd_sql(g_forupd_sql)
+    declare cgoi100_bcl cursor from g_forupd_sql
+
+    let l_allow_insert = cl_detail_input_auth('insert')
+    let l_allow_delete = cl_detail_input_auth('delete')
+
+    input array g_cgc without defaults from s_cgc.*
+        attribute (count=g_rec_b,maxcount=g_max_rec,unbuffered,
+                   insert row = l_allow_insert,delete row=l_allow_delete,append row=l_allow_insert) 
+ 
+        before input
+            if g_rec_b != 0 then
+                call fgl_set_arr_curr(l_ac)
+            end if
+ 
+        before row
+            let p_cmd='' 
+            let l_ac = arr_curr()
+            let l_n  = arr_count()
+    
+            if g_rec_b>=l_ac then
+                begin work
+                let p_cmd='u'
+                let g_cgc_t.* = g_cgc[l_ac].*  #backup
+                open cgoi100_bcl using g_cgb.cgb01
+                if status then
+                    call cl_err("open cgoi100_bcl:", status, 1)
+                else 
+                    fetch cgoi100_bcl into g_cgc[l_ac].* 
+                    if sqlca.sqlcode then
+                        call cl_err(g_cgb.cgb01,sqlca.sqlcode,1)
+                    end if
+                end if
+            end if
+ 
+        before insert
+            let l_n = arr_count()
+            let p_cmd='a'                    
+            initialize g_cgc[l_ac].* to null 
+            select max(cgc02) into g_cgc[l_ac].cgc02 from cgc_file
+             where cgc01 = g_cgb.cgb01
+            if not cl_null(g_cgc[l_ac].cgc02) then
+                let g_cgc[l_ac].cgc02 = g_cgc[l_ac].cgc02 + 1
+            else
+                let g_cgc[l_ac].cgc02 = 1
+            end if
+            let g_cgc[l_ac].cgc05 = g_today
+            let g_cgc_t.* = g_cgc[l_ac].*
+            call cl_show_fld_cont()
+            next field cgc02
+ 
+        after insert
+            display "after insert" 
+            if int_flag then
+                call cl_err('',9001,0)
+                let int_flag = 0
+                close cgoi100_bcl
+                cancel insert
+            end if
+            begin work                    #fun-680010
+    
+            insert into cgc_file(cgc01,cgc02,cgc03,cgc04,cgc05,cgc06,cgc07,cgc08,cgc09,cgc10,
+                                cgc11,cgc12,cgc13,cgc14,cgc15)
+                values(g_cgb.cgb01,g_cgc[l_ac].cgc02,g_cgc[l_ac].cgc03,g_cgc[l_ac].cgc04,g_cgc[l_ac].cgc05,
+                        g_cgc[l_ac].cgc06,g_cgc[l_ac].cgc07,g_cgc[l_ac].cgc08,g_cgc[l_ac].cgc09,g_cgc[l_ac].cgc10,
+                        g_cgc[l_ac].cgc11,g_cgc[l_ac].cgc12,g_cgc[l_ac].cgc13,g_cgc[l_ac].cgc14,g_cgc[l_ac].cgc15)
+            if sqlca.sqlcode then
+                call cl_err3("ins","cgc_file",g_cgb.cgb01,"",sqlca.sqlcode,"","",1)
+                rollback work
+                cancel insert
+            else
+                commit work   
+            end if 
+ 
+        before delete                            #是否取消單身
+            if g_cgb.cgb01 is not null then
+                if not cl_delete() then
+                rollback work      #fun-680010
+                cancel delete
+                end if 
+                delete from cgc_file where cgc01 = g_cgb.cgb01 and cgc02 = g_cgc[l_ac].cgc02
+                if sqlca.sqlcode then
+                    call cl_err3("del","cgc_file",g_cgb.cgb01,"",sqlca.sqlcode,"","",1)
+                    rollback work
+                    cancel delete
+                    exit input
+                end if
+            end if
+ 
+        on row change
+            if int_flag then
+                call cl_err('',9001,0)
+                let int_flag = 0
+                let g_cgc[l_ac].* = g_cgc_t.*
+                close cgoi100_bcl
+                rollback work
+                exit input
+            end if 
+            let g_cgc[l_ac].cgc06 = g_today
+            update cgc_file set cgc02=g_cgc[l_ac].cgc02,
+                                cgc03=g_cgc[l_ac].cgc03,
+                                cgc07=g_cgc[l_ac].cgc07,
+                                cgc04=g_cgc[l_ac].cgc04,
+                                cgc05=g_cgc[l_ac].cgc05,
+                                cgc06=g_cgc[l_ac].cgc06,
+                                cgc07=g_cgc[l_ac].cgc07,
+                                cgc08=g_cgc[l_ac].cgc08,
+                                cgc09=g_cgc[l_ac].cgc09,
+                                cgc10=g_cgc[l_ac].cgc10,
+                                cgc11=g_cgc[l_ac].cgc11,
+                                cgc12=g_cgc[l_ac].cgc12,
+                                cgc13=g_cgc[l_ac].cgc13,
+                                cgc14=g_cgc[l_ac].cgc14,
+                                cgc15=g_cgc[l_ac].cgc15
+            where cgc01 = g_cgb.cgb01
+            if sqlca.sqlcode then
+                call cl_err3("upd","cgc_file",g_cgb.cgb01,"",sqlca.sqlcode,"","",1)  #no.fun-660131
+                rollback work
+                let g_cgc[l_ac].* = g_cgc_t.* 
+            end if
+ 
+        after row
+            let l_ac = arr_curr()
+    
+            if int_flag then
+                call cl_err('',9001,0)
+                let int_flag = 0
+                if p_cmd='u' then
+                    let g_cgc[l_ac].* = g_cgc_t.* 
+                else
+                    call g_cgc.deleteelement(l_ac)
+                    if g_rec_b != 0 then
+                        let g_action_choice = "detail"
+                        let l_ac = l_ac_t
+                    end if 
+                end if
+                close cgoi100_bcl
+                rollback work
+                exit input
+            end if
+            let l_ac_t = l_ac
+            close cgoi100_bcl
+            commit work
+ 
+        on action controlo
+            if infield(cgc01) and l_ac > 1 then
+                let g_cgc[l_ac].* = g_cgc[l_ac-1].*
+                next field cgc01
+            end if
+ 
+        on action controlp
+ 
+        on action controlr
+            call cl_show_req_fields()
+ 
+        on action controlg
+            call cl_cmdask()
+ 
+        on action controlf
+            call cl_set_focus_form(ui.interface.getrootnode()) returning g_fld_name,g_frm_name
+            call cl_fldhelp(g_frm_name,g_fld_name,g_lang)
+          
+        on idle g_idle_seconds
+            call cl_on_idle()
+            continue input
+ 
+        on action about
+            call cl_about()
+ 
+        on action help
+            call cl_show_help()
+ 
+    end input
+ 
+    close cgoi100_bcl
+    commit work
 end function

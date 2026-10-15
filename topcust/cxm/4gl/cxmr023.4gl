@@ -24,6 +24,67 @@ DEFINE   l_table         STRING
 DEFINE   g_str           STRING
 DEFINE   g_sql           STRING
 
+define   g_oea         dynamic array of record
+        p1c1        varchar(20),
+        p1c2        varchar(20),
+        p1c3        varchar(20),
+        p1c4        date,
+        p1c5        varchar(20),
+        p1c6        decimal(20,3),
+        p1c7        varchar(20),
+        p1c8        decimal(20,3),
+        p1c9        date
+    end record
+define   g_oga          dynamic array of record
+        p2c1        varchar(20),
+        p2c2        varchar(20),
+        p2c3        varchar(20),
+        p2c4        date,
+        p2c5        integer,
+        p2c6        varchar(20),
+        p2c7        decimal(20,3)
+    end record
+define   g_bu           dynamic array of record
+        p3c1        varchar(20),
+        p3c2        varchar(20),
+        p3c3        varchar(20),
+        p3c4        varchar(20),
+        p3c5        varchar(20),
+        p3c6        date,
+        p3c7        decimal(20,3)
+    end record
+define   g_guo           dynamic array of record
+        p4c1        varchar(20),
+        p4c2        varchar(20),
+        p4c3        varchar(20),
+        p4c4        varchar(1000),
+        p4c5        varchar(1000),
+        p4c6        varchar(1000),
+        p4c7        varchar(20),
+        p4c8        varchar(20),
+        p4c9        varchar(20),
+        p4c10       decimal(20,3),
+        p4c11       varchar(20),
+        p4c12       date,
+        p4c13       integer
+    end record
+define   g_fa           dynamic array of record
+        p5c1        varchar(20),
+        p5c2        varchar(20),
+        p5c3        varchar(20),
+        p5c4        varchar(20),
+        p5c5        date,
+        p5c6        decimal(20,3)
+    end record
+define   g_fei           dynamic array of record
+        p6c1        varchar(20),
+        p6c2        varchar(20),
+        p6c3        varchar(20),
+        p6c4        varchar(20),
+        p6c5        date,
+        p6c6        decimal(20,3)
+    end record
+
 MAIN
    OPTIONS
        INPUT NO WRAP
@@ -317,6 +378,7 @@ FUNCTION cxmr023()
                 from sfb_file
                 where sfb87 = 'Y' and sfb12 <> 0
                    and sfb05 not like '%-%'
+                   and substr(sfb01,1,3) <> 'MSY'
                    and substr(sfb05, 7, 1) in ('A', 'B', 'C')
                 group by substr(sfb05, 1, 6))
                 on(fg_part_no = sfb05 and uuid = ?)
@@ -366,7 +428,8 @@ FUNCTION cxmr023()
                "         (select unique uuid, cust_proj, fg_part_no ",
                "            from cxmr023_exp   where uuid = ?) ",
                "   where sfb87 = 'Y' ",
-               "      and sfb12 <> 0 and sfb05 not like '%-%' ",
+               "      and sfb05 not like '%-%' ",
+               "      and substr(sfb01,1,3) = 'MRA' ",
                "      and substr(sfb05, 7, 1) in ('A', 'B', 'C') ",
                "      and substr(sfb05, 1, 6) = fg_part_no ",
                "   group by uuid,cust_proj) b ",
@@ -408,7 +471,7 @@ FUNCTION cxmr023()
                 "                  and ogb04 like '%R' ",
                 "               group by substr(ogb04, 1, 6))",
                 "      on ogb04 = fg_part_no",
-                "   left join (select substr(ohb04, 1, 6) ohb04, sum(ohb12) ohb12",
+                "   left join (select substr(ohb04, 1, 6) ohb04, sum(-ohb12) ohb12",
                 "                  from oha_file, ohb_file where oha01 = ohb01",
                 "                  and ohapost = 'Y' and oha09 in ('1', '4')",
                 "                  and ohb04 not like '%-%' and SUBSTR(ohb04, 7, 1) in ('A', 'B', 'C')",
@@ -486,7 +549,7 @@ FUNCTION cxmr023()
                     v.tc_bmi01 asc) as rn
                    from oea o left join valid_rates v on o.oeb04 = v.tc_bmj04) t
                 where rn = 1)
-              select uuid, cust_proj, sum(oeb12) oeb12, round(sum(oeb12 / nvl(tc_bmj07, 98.5) * 100)) oeb12_yield
+              select uuid, cust_proj, sum(oeb12) oeb12, round(sum(ceil(oeb12 * 100 / nvl(tc_bmj07, 98.5)))) oeb12_yield
                 from detail group by uuid, cust_proj "
     let l_sql = "merge into cxmr023_param a using (
                 ",l_sql," ) b on (a.uuid=b.uuid and a.cust_proj=b.cust_proj)
@@ -499,6 +562,8 @@ FUNCTION cxmr023()
 
    # darcy:2025/11/07 add e---
 
+   call cxmr023_detail_export(l_uuid)
+   
    # darcy:2025/11/10 add s---
    # 每个项目只保留一个料号
    let l_sql = "delete from cxmr023_exp",
@@ -510,6 +575,7 @@ FUNCTION cxmr023()
                "         where rn <> 1 group by uuid, cust_proj, fg_part_no )"
    prepare cxmr023_delete_exp from l_sql
    execute cxmr023_delete_exp using l_uuid
+
 
    # darcy:2025/11/10 add s---
 
@@ -587,4 +653,195 @@ function cxmr023_crt_tmp()
       bmb03 varchar(20),
       bmd04 varchar(20)
    )
+end function
+
+-- 导出明细资料
+function cxmr023_detail_export(p_uuid)
+    define i,j,k        integer
+    define l_sql        string
+    define p_uuid       varchar(40)
+
+    -- 订单明细
+    let l_sql ="with valid_rates as (
+                    select b.tc_bmi01, c.tc_bmj04, c.tc_bmj07, c.tc_bmj09
+                      from tc_bmi_file b, tc_bmj_file c
+                     where b.tc_bmi01 = c.tc_bmj01 and c.tc_bmj11 = 1 and b.tc_bmiconf = 'Y'
+                    ),
+                oea as (
+                    select
+                        uuid, cust_proj, fg_part_no, oea01, oeb03, oea02, oeb04, oeb12
+                      from oea_file, oeb_file,
+                        ( select unique uuid, cust_proj, fg_part_no
+                            from cxmr023_exp
+                            where uuid = ? )
+                    where oea01 = oeb01 and oeaconf = 'Y'
+                      and oea00 = '0' and oeb04 like fg_part_no || '%'
+                      and substr (oeb04, 7, 1) in ('A', 'B', 'C')
+                      and substr (oeb04, 10, 1) = 'R' and oeb04 not like '%-%'
+                    ),
+                detail as (
+                    select
+                        uuid, cust_proj, fg_part_no, oea01, oea02, oeb04, oeb12, tc_bmi01, tc_bmj07, tc_bmj09
+                    from (
+                            select
+                                uuid, cust_proj, fg_part_no, o.oea01, o.oea02, o.oeb04, o.oeb12, v.tc_bmi01, v.tc_bmj07, v.tc_bmj09,
+                                ROW_NUMBER() OVER ( partition by o.oea01, o.oeb03
+                                    order by case when v.tc_bmj09 <= o.oea02 then 0 else 1 end,
+                                             case when v.tc_bmj09 <= o.oea02 then v.tc_bmj09 end desc,
+                                             case when v.tc_bmj09 <= o.oea02 then v.tc_bmi01 end desc,
+                                             v.tc_bmi01 asc ) as rn
+                              from oea o left join valid_rates v on o.oeb04 = v.tc_bmj04 ) t
+                             where rn = 1 )
+                select cust_proj,fg_part_no,oea01,oea02,oeb04,oeb12,tc_bmi01,tc_bmj07,tc_bmj09 from detail
+                 order by cust_proj,fg_part_no,oea02,oea01"
+    prepare cxmr023_detail_p1 from l_sql
+    declare cxmr023_detail_c1 cursor for cxmr023_detail_p1
+    -- 出货明细
+    let l_sql = " select cust_proj,fg_part_no,oga01,oga02,ogb03,ogb04,ogb12
+                    from (select unique uuid, cust_proj, fg_part_no from cxmr023_exp where uuid = ? )
+                     left join (select oga01,oga02,ogb03,substr(ogb04, 1, 6) ogb04,ogb12
+                                  from oga_file, ogb_file where oga01 = ogb01
+                                   and ogapost = 'Y' and oga09 = '2'
+                                   and ogb04 not like '%-%' and SUBSTR(ogb04, 7, 1) in ('A', 'B', 'C')
+                                   and ogb04 like '%R'
+                                union all
+                                select oha01,oha02,ohb03,substr(ohb04, 1, 6)ohb04 ,-ohb12
+                                    from oha_file, ohb_file where oha01 = ohb01
+                                    and ohapost = 'Y' and oha09 in ('1', '4')
+                                    and ohb04 not like '%-%' and SUBSTR(ohb04, 7, 1) in ('A', 'B', 'C')
+                                    and ohb04 like '%R')
+                       on ogb04 = fg_part_no
+                  order by cust_proj,fg_part_no,oga02,oga01 "
+    prepare cxmr023_detail_p2 from l_sql
+    declare cxmr023_detail_c2 cursor for cxmr023_detail_p2
+    -- 补料明细
+    let l_sql = "select cust_proj,fg_part_no,sub_item,sfe01,sfe02,sfe04,sfe16
+                    from (select unique uuid, cust_proj, fg_part_no, sub_item
+                            from cxmr023_exp
+                            where uuid = ?),
+                        (select sfe01, sfe02, sfe07, sfe04,sfe16
+                            from sfe_file
+                            where substr(sfe02, 1, 3) = 'MRD'
+                                or substr(sfe01, 1, 3) = 'MSA')
+                    where sub_item = sfe07
+                order by cust_proj,fg_part_no,sub_item,sfe01,sfe02 "
+    prepare cxmr023_detail_p3  from l_sql
+    declare cxmr023_detail_c3  cursor for cxmr023_detail_p3
+    -- 过期明细
+    let l_sql = "select cust_proj, fg_part_no,img01,ima02,ima021,imaud38,img02,img03,img04,img10,img09,img18,img18 -trunc(sysdate)
+                from  (select unique uuid, cust_proj, fg_part_no, sub_item
+                        from cxmr023_exp
+                        where uuid = ?),
+                img_file ,ima_file
+                where img01 = sub_item and ima01= img01
+                and img18 < trunc(sysdate)
+                order by cust_proj,fg_part_no,img01,img02,img03,img04 "
+
+    prepare cxmr023_detail_p4 from l_sql
+    declare cxmr023_detail_c4 cursor for cxmr023_detail_p4
+    -- 发料明细
+    let l_sql = "select cust_proj,fg_part_no,sfb01,sfb05,sfb81,  sfb081
+                    from sfb_file,
+                            (select unique uuid, cust_proj, fg_part_no
+                                from cxmr023_exp   where uuid = ?)
+                    where sfb87 = 'Y'
+                        and sfb05 not like '%-%'
+                        and substr(sfb01,1,3) = 'MRA'
+                        and substr(sfb05, 7, 1) in ('A', 'B', 'C')
+                        and substr(sfb05, 1, 6) = fg_part_no
+                    order by cust_proj,fg_part_no,sfb01 "
+    prepare cxmr023_detail_p5 from l_sql
+    declare cxmr023_detail_c5 cursor for cxmr023_detail_p5
+    -- 报废明细
+    let l_sql = "select cust_proj,fg_part_no,sfb01,sfb05,sfb81,  sfb12
+       from sfb_file,
+             (select unique uuid, cust_proj, fg_part_no
+                from cxmr023_exp   where uuid = ?)
+       where sfb87 = 'Y'
+          and sfb12 <> 0 and sfb05 not like '%-%'
+          and substr(sfb05, 7, 1) in ('A', 'B', 'C')
+          and substr(sfb01,1,3) <> 'MSY'
+          and substr(sfb05, 1, 6) = fg_part_no
+         order by cust_proj,fg_part_no,sfb01 "
+    prepare cxmr023_detail_p6 from l_sql
+    declare cxmr023_detail_c6 cursor for cxmr023_detail_p6
+
+    call g_oea.clear()
+    call g_oga.clear()
+    call g_bu.clear()
+    call g_guo.clear()
+    call g_fa.clear()
+    call g_fei.clear()
+
+    let i = 1
+    foreach cxmr023_detail_c1 using p_uuid into g_oea[i].*
+        if sqlca.sqlcode then
+            call cl_err('cxmr023_detail_c1',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        let i = i + 1
+    end foreach
+    call g_oea.deleteElement(i)
+
+    let i = 1
+    foreach cxmr023_detail_c2 using p_uuid into g_oga[i].*
+        if sqlca.sqlcode then
+            call cl_err('cxmr023_detail_c2',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        let i = i + 1
+    end foreach
+    call g_oga.deleteElement(i)
+
+    let i = 1
+    foreach cxmr023_detail_c3 using p_uuid into g_bu[i].*
+        if sqlca.sqlcode then
+            call cl_err('cxmr023_detail_c3',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        let i = i + 1
+    end foreach
+    call g_bu.deleteElement(i)
+
+    let i = 1
+    foreach cxmr023_detail_c4 using p_uuid into g_guo[i].*
+        if sqlca.sqlcode then
+            call cl_err('cxmr023_detail_c4',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        let i = i + 1
+    end foreach
+    call g_guo.deleteElement(i)
+
+    let i = 1
+    foreach cxmr023_detail_c5 using p_uuid into g_fa[i].*
+        if sqlca.sqlcode then
+            call cl_err('cxmr023_detail_c5',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        let i = i + 1
+    end foreach
+    call g_fa.deleteElement(i)
+
+    let i = 1
+    foreach cxmr023_detail_c6 using p_uuid into g_fei[i].*
+        if sqlca.sqlcode then
+            call cl_err('cxmr023_detail_c6',sqlca.sqlcode,1)
+            exit foreach
+        end if
+        let i = i + 1
+    end foreach
+    call g_fei.deleteElement(i)
+
+    call cl_download_by_explorer(
+        cl_expexcel10_nogui(
+        "/u1/topprod/topcust/cxm/4fd/cxmr023_1.xml",
+        "s_oea",base.TypeInfo.create(g_oea),
+        "s_oga",base.TypeInfo.create(g_oga),
+        "s_bu",base.TypeInfo.create(g_bu),
+        "s_guo",base.TypeInfo.create(g_guo),
+        "s_fa",base.TypeInfo.create(g_fa),
+        "s_fei",base.TypeInfo.create(g_fei),
+        "",null,"",null,"",null,"",null
+    ))
 end function

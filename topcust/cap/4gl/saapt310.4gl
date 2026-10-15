@@ -10174,8 +10174,21 @@ FUNCTION t310_bu(u_sw,r_sw)
               #No:181125 add end-----------
               LET  l_apc13= l_apc09 - l_amt4   #No.MOD-740413
               END IF #No:181125 add
+             #darcy:2026/10/15 修正apc13漏扣"直接冲账金额(apc15)"的问题--Begin
+             #问题原因:应付单据在aapt110录入时若做过直接冲账(apv_file),则apa65f/apa65>0,
+             #         该直接冲账金额单独存放于apc_file.apc15,既未包含在apc11(本币已付)中,
+             #         apc09(本币合计)亦未削减;上面各分支仅用 apc09-apc11 重算apc13,
+             #         导致本币未冲金额多出一个apc15,与实际未付金额不符。
+             #标准公式(与aapt110 FUNCTION t110_apc_check2、FUNCTION s_g_np1一致):
+             #         apc13 = apc09 - apc11 - apc15
+             #说明1:仅在本ELSE分支(手算apc13)扣除;上面IF分支调用s_g_np1取回apc13,
+             #       其内部已扣减apc15,若再扣会重复。
+             #说明2:被直接冲账的"待抵"单据其apc15=0(直接冲账金额已计入该单据的apc11),
+             #       扣0无影响,不会重复扣减。
+              IF cl_null(l_apc15) THEN LET l_apc15 = 0 END IF
+              LET l_apc13 = l_apc13 - l_apc15
+             #darcy:2026/10/15 修正apc13漏扣"直接冲账金额(apc15)"的问题--End
            END IF
-         #   LET l_apc13 = l_apc13 - l_apc15                        #MOD-C20202 add #darcy:2024/01/12
            EXECUTE t310_str4_apc USING l_amtf4,l_amt4,l_apc13,m_apg.apg04,m_apg.apg06  
            IF SQLCA.sqlcode OR SQLCA.SQLERRD[3]=0  THEN   #CHI-850023    
              #CALL cl_err(m_apg.apg04,SQLCA.SQLCODE,1) #CHI-A60034 mark

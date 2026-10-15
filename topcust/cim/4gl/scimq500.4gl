@@ -923,9 +923,23 @@ function scimq500_output(p_date,p_version)
                 "--root %1 ",
                 "--font-path %1/fonts ",
                 "--font-path %1/core/fonts ",
-                "%1/projects/cimr500/all.typ ",
-                "/u1/out/cimr500.%2.pdf ",
+                "%1/projects/cimr500/main.typ ",
+                "/u1/out/总览.%2.pdf ",
                 "--input data=\"data.%2.json\" ",
+                "--input date=\"%3\""
+    let l_cmd = sfmt(l_cmd,l_file,l_id,p_date using "yyyy-mm-dd")
+    call runBatch(l_cmd,false)  returning l_ok
+    if l_ok != 0 then
+        call scimq500_err('','','产生PDF文件失败',l_ok)
+        return ""
+    end if
+
+    let l_cmd = "%1/typst compile ",
+                "--root %1 ",
+                "--font-path %1/fonts ",
+                "--font-path %1/core/fonts ",
+                "%1/projects/cimr500/avg.typ ",
+                "/u1/out/日汇总.%2.pdf ",
                 "--input avg=\"avg.%2.json\" ",
                 "--input date=\"%3\""
     let l_cmd = sfmt(l_cmd,l_file,l_id,p_date using "yyyy-mm-dd")
@@ -935,7 +949,7 @@ function scimq500_output(p_date,p_version)
         return ""
     end if
 
-    return sfmt("/u1/out/cimr500.%1.pdf",l_id)
+    return sfmt("/u1/out/总览.%1.pdf",l_id),sfmt("/u1/out/日汇总.%1.pdf",l_id)
 end function
 
  function scimq500_b_fill()
